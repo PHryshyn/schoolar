@@ -1,0 +1,3 @@
+[submodule "finalproject"]
+	path = finalproject
+	url = ssh://pahr@sam-solutions.net/srv/git/JavaSpring/hd7815/03/
