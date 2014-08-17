@@ -10,6 +10,7 @@
     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.hryshyn.controller" />
+    <context:property-placeholder location="classpath:database.properties"/>
 
     <!-- MySQL data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -46,8 +47,8 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <bean id="myUserDetailsService"
-          class="com.hryshyn.service.UserDetailsImpl">
+    <bean id="UserDetailsServiceImpl"
+          class="com.hryshyn.service.UserDetailsServiceImpl">
         <property name="userDao" ref="userDao" />
     </bean>
 

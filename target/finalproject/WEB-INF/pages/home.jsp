@@ -1,15 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="sec"
+          uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
-<head>
-    <title></title>
-</head>
+<title>${title}</title>
 <body>
-<h1>Message : ${message}</h1>
+${message}</h1>
 
-form action="${logoutUrl}" method="post" id="logoutForm">
-<input type="hidden"
-       name="${_csrf.parameterName}"
-       value="${_csrf.token}" />
+<c:url value="/j_spring_security_logout" var="logoutUrl" />
+
+<!-- csrt for log out-->
+<form action="${logoutUrl}" method="post" id="logoutForm">
+    <input type="hidden"
+           name="${_csrf.parameterName}"
+           value="${_csrf.token}" />
 </form>
 
 <script>
@@ -24,6 +28,7 @@ form action="${logoutUrl}" method="post" id="logoutForm">
             href="javascript:formSubmit()"> Logout</a>
     </h2>
 </c:if>
+
 
 </body>
 </html>

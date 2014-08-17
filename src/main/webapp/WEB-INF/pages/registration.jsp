@@ -5,5 +5,11 @@
 </head>
 <body>
 This is registration form
+
+<tr>
+    <td>
+        <a href='registration' > Create account</a>
+    </td>
+</tr>
 </body>
 </html>

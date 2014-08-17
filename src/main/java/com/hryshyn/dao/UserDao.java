@@ -1,8 +1,8 @@
 package com.hryshyn.dao;
 
-import com.hryshyn.model.User;
+import com.hryshyn.model.UserModel;
 
 
 public interface UserDao {
-    User findByUserName(String username);
+    UserModel findByUserName(String username);
 }

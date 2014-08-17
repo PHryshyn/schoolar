@@ -19,8 +19,9 @@
     <csrf />
     </http>
 
+
     <authentication-manager>
-        <authentication-provider user-service-ref="UserDetailsImpl" >
+        <authentication-provider user-service-ref="UserDetailsServiceImpl" >
             <password-encoder hash="bcrypt" />
         </authentication-provider>
     </authentication-manager>

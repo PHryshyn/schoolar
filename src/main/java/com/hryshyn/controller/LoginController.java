@@ -10,28 +10,23 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
+    //Mapping home.jsp
     @RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
     public ModelAndView defaultPage() {
 
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "Schoolar v.1.0");
-        model.addObject("message", "Welcome");
-        model.setViewName("home");
-        return model;
+        return ViewPage("Schoolar v.1.0", "Welcome", "home");
 
     }
 
+    //Mapping admin.jsp
     @RequestMapping(value = "/admin**", method = RequestMethod.GET)
     public ModelAndView adminPage() {
 
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "Schoolar v.1.0 (admin)");
-        model.addObject("message", "Welcome");
-        model.setViewName("admin");
-        return model;
+        return ViewPage("Schoolar v.1.0 (admin)", "Welcome", "admin");
 
     }
 
+    //Mapping login.jsp
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam(value = "error", required = false) String error,
                               @RequestParam(value = "logout", required = false) String logout) {
@@ -49,5 +44,16 @@ public class LoginController {
         return model;
 
     }
+    //Method ViewPage for admin.jsp and home.jsp
+    public ModelAndView ViewPage(String title, String message, String page) {
+
+        ModelAndView model = new ModelAndView();
+        model.addObject("title", title);
+        model.addObject("message", message);
+        model.setViewName(page);
+        return model;
+
+    }
+
 
 }

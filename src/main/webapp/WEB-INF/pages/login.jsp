@@ -67,11 +67,6 @@
                 <td colspan='2'><input name="submit" type="submit"
                                        value="submit" /></td>
             </tr>
-            <tr>
-                <td>
-                    <a href='registration.jsp' > Create account</a>
-                </td>
-            </tr>
         </table>
 
         <input type="hidden" name="${_csrf.parameterName}"
