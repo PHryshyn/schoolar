@@ -26,19 +26,23 @@
       <file leaf-file-name="RegistrationModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/model/RegistrationModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1054">
-              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1331" max-vertical-offset="1938">
+              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
+      <file leaf-file-name="RegistrationController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/controller/RegistrationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,18 +50,18 @@
       <file leaf-file-name="dispatcher-database.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-database.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1360">
-              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1343">
+              <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="UserDao.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="3264">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+              <caret line="6" column="45" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -67,37 +71,27 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/model/UserRoleModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="459">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.68" vertical-offset="0" max-vertical-offset="714">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2581" max-vertical-offset="3128">
+              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dispatcher-security.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-security.xml">
+      <file leaf-file-name="LoginController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75242716" vertical-offset="200" max-vertical-offset="612">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserModel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/model/UserModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="680">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1020">
+              <caret line="53" column="21" selection-start-line="47" selection-start-column="4" selection-end-line="53" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -106,19 +100,38 @@
       <file leaf-file-name="UserDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="748">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="34" />
+              <folding>
+                <element signature="e#247#277#0" expanded="true" />
+                <element signature="e#379#390#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDetailsServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/service/UserDetailsServiceImpl.java">
+      <file leaf-file-name="RegistrationDao.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/RegistrationDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="884">
-              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationDaoImpl.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/RegistrationDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.11792453" vertical-offset="137" max-vertical-offset="765">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#891#892#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,10 +151,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/customizeMessage.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/messageView.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/databaseConfiguration.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/service/UserDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/model/User.java" />
@@ -151,16 +162,21 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/model/UserRoleModel.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/orm/Users.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/orm/UserRoles.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/service/UserDetailsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/model/UserModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/service/UserDetailsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/model/RegistrationModel.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-database.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-security.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-database.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/model/UserModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/model/RegistrationModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/controller/RegistrationController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/dao/RegistrationDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hryshyn/dao/RegistrationDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -179,9 +195,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="420" />
+    <option name="x" value="293" />
+    <option name="y" value="111" />
     <option name="width" value="931" />
-    <option name="height" value="637" />
+    <option name="height" value="655" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -211,6 +228,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -226,7 +244,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -236,7 +254,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -262,7 +280,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -292,7 +310,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -314,7 +332,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -340,7 +358,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -370,7 +388,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -400,7 +418,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -430,7 +448,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="schoolar" />
+              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -456,7 +474,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,7 +487,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/example_login_form/ContactJpa-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -478,7 +495,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -690,6 +707,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -708,12 +731,6 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="false" name="finalproject" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.54" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
@@ -802,6 +819,11 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -821,15 +843,16 @@
       <workItem from="1408224921045" duration="696000" />
       <workItem from="1408227791268" duration="2659000" />
       <workItem from="1408307391238" duration="1178000" />
+      <workItem from="1408452365792" duration="7443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36114000" />
+    <option name="totallyTimeSpent" value="43557000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="420" y="0" width="931" height="637" extended-state="0" />
-    <editor active="false" />
+    <frame x="293" y="111" width="931" height="655" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -847,7 +870,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31439394" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276515" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -860,6 +882,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276515" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -881,7 +904,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -889,22 +912,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="238">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/service/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1122">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/orm/UserRoles.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="374">
@@ -925,7 +932,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1037">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#214#229#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -978,7 +987,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="765">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1288#1308#0" expanded="true" />
+            <element signature="e#1346#1363#0" expanded="true" />
+            <element signature="e#1406#1424#0" expanded="true" />
+            <element signature="e#1467#1489#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,7 +1039,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="374">
           <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding />
+          <folding>
+            <element signature="e#1288#1308#0" expanded="true" />
+            <element signature="e#1346#1363#0" expanded="true" />
+            <element signature="e#1406#1424#0" expanded="true" />
+            <element signature="e#1467#1489#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,7 +1084,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="374">
           <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding />
+          <folding>
+            <element signature="e#1288#1308#0" expanded="true" />
+            <element signature="e#1346#1363#0" expanded="true" />
+            <element signature="e#1406#1424#0" expanded="true" />
+            <element signature="e#1467#1489#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,7 +1129,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="374">
           <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding />
+          <folding>
+            <element signature="e#1288#1308#0" expanded="true" />
+            <element signature="e#1346#1363#0" expanded="true" />
+            <element signature="e#1406#1424#0" expanded="true" />
+            <element signature="e#1467#1489#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1125,14 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="952">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="663">
@@ -1147,33 +1168,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.8.RELEASE/spring-beans-3.2.8.RELEASE.jar!/org/springframework/beans/factory/parsing/FailFastProblemReporter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="955" max-vertical-offset="1428">
-          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.6061776" vertical-offset="132" max-vertical-offset="391">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="357">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="357">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1020">
-          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/controller/RegistrationController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state vertical-scroll-proportion="-8.384615" vertical-offset="955" max-vertical-offset="1428">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.28" vertical-offset="127" max-vertical-offset="612">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="952">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1181,7 +1210,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/orm/Users.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="40" />
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1189,71 +1218,36 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/orm/UserRoles.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="612">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/model/RegistrationModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1054">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.8.RELEASE/spring-beans-3.2.8.RELEASE.jar!/org/springframework/beans/factory/parsing/FailFastProblemReporter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6061776" vertical-offset="132" max-vertical-offset="391">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.68" vertical-offset="0" max-vertical-offset="714">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="-8.48" vertical-offset="281" max-vertical-offset="731">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#1288#1308#0" expanded="true" />
+            <element signature="e#1346#1363#0" expanded="true" />
+            <element signature="e#1406#1424#0" expanded="true" />
+            <element signature="e#1467#1489#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/service/UserDetailsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="3264">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-database.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1360">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="884">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1261,7 +1255,43 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/model/UserModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+          <folding>
+            <element signature="e#214#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1020">
+          <caret line="53" column="21" selection-start-line="47" selection-start-column="4" selection-end-line="53" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/controller/RegistrationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2581" max-vertical-offset="3128">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-database.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1343">
+          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1269,24 +1299,59 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/model/UserRoleModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/service/UserDetailsServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="884">
-          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <caret line="6" column="45" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-security.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75242716" vertical-offset="200" max-vertical-offset="612">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#247#277#0" expanded="true" />
+            <element signature="e#379#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/model/RegistrationModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1331" max-vertical-offset="1938">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/RegistrationDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hryshyn/dao/RegistrationDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11792453" vertical-offset="137" max-vertical-offset="765">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -20,12 +20,13 @@
         </property>
     </bean>
 
-    <bean id="messageSource"
+  <!--  <bean id="messageSource"
           class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">
                <value>database</value>
         </property>
     </bean>
+-->
 
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource" >

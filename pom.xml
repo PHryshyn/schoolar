@@ -29,14 +29,8 @@
           <version>${dbcp.version}</version>
       </dependency>
 
-      <!-- Hibernate ORM -->
-      <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-core</artifactId>
-          <version>${hibernate.version}</version>
-      </dependency>
 
-      <!-- Spring 3 dependencies -->
+      <!-- Springframework dependencies -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-core</artifactId>
@@ -49,26 +43,24 @@
           </exclusions>
       </dependency>
 
-      <!-- Spring MVC -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
           <version>${spring.version}</version>
       </dependency>
 
-      <!-- Spring + aspects -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-aspects</artifactId>
           <version>${spring.version}</version>
       </dependency>
 
-      <!-- ORM integration, e.g Hibernate -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-orm</artifactId>
           <version>${spring.version}</version>
       </dependency>
+
 
       <!-- Spring Security -->
       <dependency>
@@ -83,19 +75,66 @@
           <version>${spring.security.version}</version>
       </dependency>
 
-      <!-- Spring Security JSP Taglib -->
       <dependency>
           <groupId>org.springframework.security</groupId>
           <artifactId>spring-security-taglibs</artifactId>
           <version>${spring.security.version}</version>
       </dependency>
 
-      <!-- jstl for jsp page -->
+
+      <!-- Hibernate dependencies -->
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-core</artifactId>
+          <version>${hibernate.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>${hibernate.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.validation</groupId>
+          <artifactId>validation-api</artifactId>
+          <version>1.0.0.GA</version>
+      </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>4.2.0.Final</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate.javax.persistence</groupId>
+          <artifactId>hibernate-jpa-2.0-api</artifactId>
+          <version>1.0.1.Final</version>
+      </dependency>
+
+
+      <!-- javax.servlet -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>${jstl.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>${servletapi.version}</version>
+          <scope>provided</scope>
+      </dependency>
+
+
+      <!-- jstl -->
       <dependency>
           <groupId>jstl</groupId>
           <artifactId>jstl</artifactId>
           <version>${jstl.version}</version>
       </dependency>
+
 
       <!-- MySql Driver -->
       <dependency>
@@ -103,6 +142,7 @@
           <artifactId>mysql-connector-java</artifactId>
           <version>${mysql.connector.version}</version>
       </dependency>
+
 
       <!-- logging, slf4j -->
       <dependency>
@@ -123,44 +163,6 @@
           <version>${logback.version}</version>
       </dependency>
 
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>servlet-api</artifactId>
-          <version>${servletapi.version}</version>
-          <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-entitymanager</artifactId>
-          <version>${hibernate.version}</version>
-      </dependency>
-
-      <dependency>
-          <groupId>javax.validation</groupId>
-          <artifactId>validation-api</artifactId>
-          <version>1.0.0.GA</version>
-      </dependency>
-      <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-validator</artifactId>
-          <version>4.2.0.Final</version>
-      </dependency>
-
-      <!-- Jsoup library for @SafeHtml -->
-      <dependency>
-          <groupId>org.jsoup</groupId>
-          <artifactId>jsoup</artifactId>
-          <version>1.7.2</version>
-      </dependency>
-
-
-      <dependency>
-          <groupId>org.hibernate.javax.persistence</groupId>
-          <artifactId>hibernate-jpa-2.0-api</artifactId>
-          <version>1.0.1.Final</version>
-      </dependency>
-
 
       <dependency>
       <groupId>junit</groupId>
@@ -168,16 +170,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-
-      <!-- jstl -->
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>jstl</artifactId>
-          <version>1.2</version>
-      </dependency>
-
-
-
 
   </dependencies>
   <build>

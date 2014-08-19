@@ -9,7 +9,7 @@ public class UserModel {
     private String password;
     private Set<UserRoleModel> userRole = new HashSet<UserRoleModel>(0);
 
-    //default constructor
+
     public UserModel() {}
 
     //getter and setter Username
