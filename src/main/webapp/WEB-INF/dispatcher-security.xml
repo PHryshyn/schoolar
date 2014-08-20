@@ -1,30 +1,39 @@
-<beans:beans xmlns="http://www.springframework.org/schema/security"
-             xmlns:beans="http://www.springframework.org/schema/beans"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-	http://www.springframework.org/schema/security
-	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-<http auto-config="true"  use-expressions="true">
-    <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-    <form-login
-            login-page="/login"
-            default-target-url="/welcome"
-            authentication-failure-url="/login?error"
-            username-parameter="username"
-            password-parameter="password" />
-    <logout logout-success-url="/login?logout" />
+<security:http pattern="/resources" security="none" />
 
-    <csrf />
-    </http>
+    <security:http auto-config="true"  use-expressions="true">
+        <security:intercept-url pattern="/login" access="permitAll"/>
+        <security:intercept-url pattern="/logout" access="permitAll"/>
+        <security:intercept-url pattern="/denied" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/user" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/role" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
 
+        <security:form-login login-page="/login"
+                             authentication-failure-url="/login/failure"
+                             default-target-url="/"/>
 
-    <authentication-manager>
-        <authentication-provider user-service-ref="UserDetailsServiceImpl" >
-            <password-encoder hash="bcrypt" />
-        </authentication-provider>
-    </authentication-manager>
+        <security:access-denied-handler error-page="/denied"/>
 
-</beans:beans>
+        <security:logout invalidate-session="true"
+                         logout-success-url="/logout/success"
+                         logout-url="/logout"/>
+    </security:http>
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="customUserDetailsService">
+            <security:password-encoder hash="md5"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+    <bean id="customUserDetailsService" class="com.hryshyn.service.CustomUserDetailsService"/>
+
+</beans>
 
