@@ -23,6 +23,17 @@
         </property>
     </bean>
 
+<<<<<<< HEAD
+=======
+  <!--  <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+               <value>database</value>
+        </property>
+    </bean>
+-->
+
+>>>>>>> origin/master
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
         <property name="driverClassName" value="${database.driver}"/>

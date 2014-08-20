@@ -1,7 +1,18 @@
 package com.hryshyn.controller;
 
-/**
- * Created by Volha on 16-Aug-14.
- */
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
 public class RegistrationController {
+
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public ModelAndView RegistrationPage() {
+
+        ModelAndView model = new ModelAndView();
+        model.setViewName("registration");
+        return model;
+    }
 }
