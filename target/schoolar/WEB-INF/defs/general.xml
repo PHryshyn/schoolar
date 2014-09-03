@@ -16,4 +16,11 @@
         <put-attribute name="title" value="Schoolar" />
         <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
     </definition>
+
+    <definition name="admin" extends="common">
+        <put-attribute name="title" value="Schoolar" />
+        <put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
+    </definition>
+
+
 </tiles-definitions>

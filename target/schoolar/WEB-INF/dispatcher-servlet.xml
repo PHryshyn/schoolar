@@ -39,5 +39,7 @@
 
     </bean>
 
+    <bean id="userDao" class="com.schoolar.modules.dao.Impl.UserDaoImpl"/>
+    <bean id="userService" class="com.schoolar.modules.service.Impl.UserServiceImpl"/>
 
 </beans>

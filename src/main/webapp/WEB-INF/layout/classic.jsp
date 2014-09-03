@@ -50,7 +50,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="./">Default</a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
+                    <li><a href='<spring:url value="/admin"/>'>Admin</a></li>
                     <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
