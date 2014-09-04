@@ -3,18 +3,15 @@ package com.schoolar.modules.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
-import org.jboss.logging.annotations.Message;
 
 @Entity
 @Table(name = "user")
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
 
@@ -22,7 +19,7 @@ public class User {
     @Column(name = "username")
     private String username;
 
-//    @NotEmpty
+    @NotEmpty
     @Column(name = "password")
     private String password;
 
@@ -40,13 +37,15 @@ public class User {
     private String adress;
 
     @Column(name = "full_name_p1")
-    private String fullNamepar1;
+    private String fullNamePar1;
 
     @Column(name = "full_name_p2")
-    private String fullNamepar2;
+    private String fullNamePar2;
 
     @Column(name = "phone")
-    private int phone;
+    private Integer phone;
+
+
 
     public User() {
     }
@@ -115,27 +114,29 @@ public class User {
         this.adress = adress;
     }
 
-    public String getFullNamepar1() {
-        return fullNamepar1;
+    public String getFullNamePar1() {
+        return fullNamePar1;
     }
 
-    public void setFullNamepar1(String fullNamepar1) {
-        this.fullNamepar1 = fullNamepar1;
+    public void setFullNamePar1(String fullNamePar1) {
+        this.fullNamePar1 = fullNamePar1;
     }
 
-    public String getFullNamepar2() {
-        return fullNamepar2;
+    public String getFullNamePar2() {
+        return fullNamePar2;
     }
 
-    public void setFullNamepar2(String fullNamepar2) {
-        this.fullNamepar2 = fullNamepar2;
+    public void setFullNamePar2(String fullNamePar2) {
+        this.fullNamePar2 = fullNamePar2;
     }
 
-    public int getPhone() {
+    public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
+
+
 }

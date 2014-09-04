@@ -18,11 +18,19 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@RequestMapping
 public class UserController {
 
     @Autowired
     @Qualifier("userService")
     private UserService userService;
+
+    @RequestMapping(value = "/admin/save", method = RequestMethod.GET)
+    public ModelAndView saveUser(@ModelAttribute("user") User user,
+                                  BindingResult result) {
+        userService.addUser(user);
+        return new ModelAndView("redirect:/admin");
+    }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public ModelAndView listUser() {
@@ -30,5 +38,8 @@ public class UserController {
         model.put("users", userService.getUsers());
 
         return new ModelAndView("admin", model);
+
+
     }
+
 }

@@ -19,7 +19,7 @@
         <tbody>
         <tr>
             <td>Name:</td>
-            <td><form:input path="name" /></td>
+            <td><form:input path="username" /></td>
         </tr>
 
         <tr>

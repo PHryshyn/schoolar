@@ -5,9 +5,34 @@
 
 
 
-${message}<br/>
-<a href="${pageContext.request.contextPath}/user/add">Add new team</a><br/>
-<a href="${pageContext.request.contextPath}/admin/list">Team list</a><br/>
+
+
+
+
+
+<form:form modelAttribute="user">
+
+    <table>
+        <tr>
+            <td>First Name :</td>
+            <td><form:input path="firstName" /></td>
+
+        </tr>
+        <tr>
+            <td>Last Name :</td>
+            <td><form:input path="lastName" /></td>
+
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Save Changes" />
+            </td>
+        </tr>
+    </table>
+</form:form>
+
+
 
 <c:if test="${!empty users}">
 
