@@ -11,6 +11,11 @@
 
         -->
         <mapping class="com.schoolar.modules.model.User"/>
+        <mapping class="com.schoolar.modules.model.Login"/>
+        <mapping class="com.schoolar.modules.model.Discipline"/>
+        <mapping class="com.schoolar.modules.model.Notes"/>
+        <mapping class="com.schoolar.modules.model.Role"/>
+        <mapping class="com.schoolar.modules.model.Rating"/>
 
 
     </session-factory>

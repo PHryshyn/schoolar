@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 import org.hibernate.validator.constraints.Email;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -44,6 +46,9 @@ public class User {
 
     @Column(name = "phone")
     private Integer phone;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "discipline")
+    private Set<Discipline> disciplines;
 
 
 
@@ -138,5 +143,11 @@ public class User {
         this.phone = phone;
     }
 
+    public Set<Discipline> getDisciplines() {
+        return disciplines;
+    }
 
+    public void setDisciplines(Set<Discipline> disciplines) {
+        this.disciplines = disciplines;
+    }
 }

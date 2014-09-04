@@ -41,5 +41,7 @@
 
     <bean id="userDao" class="com.schoolar.modules.dao.Impl.UserDaoImpl"/>
     <bean id="userService" class="com.schoolar.modules.service.Impl.UserServiceImpl"/>
+    <bean id="loginDao" class="com.schoolar.modules.dao.Impl.LoginDaoImpl"/>
+    <bean id="loginService" class="com.schoolar.modules.service.Impl.LoginServiceImpl"/>
 
 </beans>
