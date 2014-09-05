@@ -39,9 +39,16 @@
 
     </bean>
 
+    <bean id="userDataDao" class="com.schoolar.modules.dao.Impl.UserDataDaoImpl"/>
+    <bean id="userDataService" class="com.schoolar.modules.service.Impl.UserDataServiceImpl"/>
     <bean id="userDao" class="com.schoolar.modules.dao.Impl.UserDaoImpl"/>
     <bean id="userService" class="com.schoolar.modules.service.Impl.UserServiceImpl"/>
-    <bean id="loginDao" class="com.schoolar.modules.dao.Impl.LoginDaoImpl"/>
-    <bean id="loginService" class="com.schoolar.modules.service.Impl.LoginServiceImpl"/>
+    <bean id="disciplineDao" class="com.schoolar.modules.dao.Impl.DisciplineDaoImpl"/>
+
+    <bean id="notesDao" class="com.schoolar.modules.dao.Impl.NotesDaoImpl"/>
+
+    <bean id="ratingDao" class="com.schoolar.modules.dao.Impl.RatingDaoImpl"/>
+
+
 
 </beans>

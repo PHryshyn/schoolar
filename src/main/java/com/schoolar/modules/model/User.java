@@ -3,9 +3,7 @@ package com.schoolar.modules.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-
-import org.hibernate.validator.constraints.Email;
-
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -15,7 +13,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @NotEmpty
     @Column(name = "username")
@@ -25,41 +23,58 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @NotEmpty
+    @Column(name = "enabled")
+    private int enabled;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Role> role = new HashSet<Role>(0);
 
-    @Email
-    @Column(name = "email")
-    private String email;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private UserData userData;
 
-    @Column(name = "adress")
-    private String adress;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Rating> ratingSet = new HashSet<Rating>(0);
 
-    @Column(name = "full_name_p1")
-    private String fullNamePar1;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Discipline> disciplines = new HashSet<Discipline>(0);
 
-    @Column(name = "full_name_p2")
-    private String fullNamePar2;
-
-    @Column(name = "phone")
-    private Integer phone;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "discipline")
-    private Set<Discipline> disciplines;
-
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Notes> notesSet = new HashSet<Notes>(0);
 
 
     public User() {
     }
 
-    public int getId() {
+    public User(String username, String password, int enabled) {
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+    }
+
+    public User(String username, String password, int enabled, Set<Role> role) {
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.role = role;
+    }
+
+    public User(String username, String password, int enabled, Set<Role> role, UserData userData, Set<Rating> ratingSet, Set<Discipline> disciplines, Set<Notes> notesSet) {
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.role = role;
+        this.userData = userData;
+        this.ratingSet = ratingSet;
+        this.disciplines = disciplines;
+        this.notesSet = notesSet;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -79,68 +94,36 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public int getEnabled() {
+        return enabled;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 
-    public String getAddress() {
-        return adress;
+    public Set<Role> getRole() {
+        return role;
     }
 
-    public void setAddress(String address) {
-        this.adress = address;
+    public void setRole(Set<Role> role) {
+        this.role = role;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public UserData getUserData() {
+        return userData;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setUserData(UserData userData) {
+        this.userData = userData;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Set<Rating> getRatingSet() {
+        return ratingSet;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
-
-    public String getFullNamePar1() {
-        return fullNamePar1;
-    }
-
-    public void setFullNamePar1(String fullNamePar1) {
-        this.fullNamePar1 = fullNamePar1;
-    }
-
-    public String getFullNamePar2() {
-        return fullNamePar2;
-    }
-
-    public void setFullNamePar2(String fullNamePar2) {
-        this.fullNamePar2 = fullNamePar2;
-    }
-
-    public Integer getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Integer phone) {
-        this.phone = phone;
+    public void setRatingSet(Set<Rating> ratingSet) {
+        this.ratingSet = ratingSet;
     }
 
     public Set<Discipline> getDisciplines() {
@@ -149,5 +132,13 @@ public class User {
 
     public void setDisciplines(Set<Discipline> disciplines) {
         this.disciplines = disciplines;
+    }
+
+    public Set<Notes> getNotesSet() {
+        return notesSet;
+    }
+
+    public void setNotesSet(Set<Notes> notesSet) {
+        this.notesSet = notesSet;
     }
 }

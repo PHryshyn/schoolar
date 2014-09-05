@@ -1,14 +1,11 @@
 package com.schoolar.modules.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "roles",
         uniqueConstraints = @UniqueConstraint(
-        columnNames = { "role_id", "login_id" }))
+        columnNames = { "role_id", "id" }))
 public class Role {
 
     @Id
@@ -16,23 +13,23 @@ public class Role {
     @Column(name = "role_id")
     private Integer roleId;
 
-    @Column(name = "login_id")
-    private Integer loginId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "role")
     private String role;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "login_id", nullable = false)
-    private Login login;
+    @JoinColumn(name = "id")
+    private User user;
 
     public Role() {
     }
 
-    public Role(Integer loginId, String role, Login login) {
-        this.loginId = loginId;
+    public Role(Integer id, String role, User user) {
+        this.id = id;
         this.role = role;
-        this.login = login;
+        this.user = user;
     }
 
     public Integer getRoleId() {
@@ -43,12 +40,12 @@ public class Role {
         this.roleId = roleId;
     }
 
-    public Integer getLoginId() {
-        return loginId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setLoginId(Integer loginId) {
-        this.loginId = loginId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getRole() {
@@ -59,11 +56,11 @@ public class Role {
         this.role = role;
     }
 
-    public Login getLogin() {
-        return login;
+    public User getUser() {
+        return user;
     }
 
-    public void setLogin(Login login) {
-        this.login = login;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -1,7 +1,5 @@
 package com.schoolar.modules.model;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -18,24 +16,22 @@ public class Discipline {
     @Column(name = "discipline")
     private String discipline;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "notes")
+    @OneToMany(fetch = FetchType.LAZY)
     private Set<Notes> notes;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "rating")
+    @OneToMany(fetch = FetchType.LAZY)
     private Set<Rating> ratings;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", nullable = false)
-    private User user;
+
 
     public Discipline() {
     }
 
-    public Discipline(String discipline, Set<Notes> notes, Set<Rating> ratings, User user) {
+    public Discipline(String discipline, Set<Notes> notes, Set<Rating> ratings, UserData user) {
         this.discipline = discipline;
         this.notes = notes;
         this.ratings = ratings;
-        this.user = user;
+
     }
 
     public int getDisciplineId() {
@@ -70,11 +66,5 @@ public class Discipline {
         this.ratings = ratings;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

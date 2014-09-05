@@ -10,7 +10,12 @@
                 <property name="connection.password">L7vEr1mAp</property>
 
         -->
+        <mapping class="com.schoolar.modules.model.UserData"/>
         <mapping class="com.schoolar.modules.model.User"/>
+        <mapping class="com.schoolar.modules.model.Discipline"/>
+        <mapping class="com.schoolar.modules.model.Notes"/>
+        <mapping class="com.schoolar.modules.model.Role"/>
+        <mapping class="com.schoolar.modules.model.Rating"/>
 
 
     </session-factory>

@@ -1,12 +1,11 @@
 package com.schoolar.modules.dao.Impl;
 
 import com.schoolar.modules.dao.UserDao;
+import com.schoolar.modules.model.Role;
 import com.schoolar.modules.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
@@ -14,31 +13,11 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void addUser(User user) {
-        sessionFactory.getCurrentSession().save(user);
+    public void addUsername(User username) {
+        sessionFactory.getCurrentSession().save(username);
     }
 
-    public void updateUser(User user) {
-        User userToUpdate = getUser(user.getId());
-        userToUpdate.setUsername(user.getUsername());
-        sessionFactory.getCurrentSession().update(userToUpdate);
-
+    public void addRole(Role role) {
+        sessionFactory.getCurrentSession().save(role);
     }
-
-    public User getUser(int id) {
-        User user = (User) sessionFactory.getCurrentSession().get(User.class, id);
-        return user;
-    }
-
-    public void deleteUser(int id) {
-        User user = getUser(id);
-        if (user != null)
-            sessionFactory.getCurrentSession().delete(user);
-    }
-
-    @SuppressWarnings("unchecked")
-    public List<User> getUsers() {
-        return sessionFactory.getCurrentSession().createCriteria(User.class).list();
-    }
-
 }

@@ -721,34 +721,73 @@
       <column name="CHARACTER_SET_CLIENT" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="COLLATION_CONNECTION" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
     </table>
-    <table name="logins" schema="" catalog="marius" type="TABLE">
-      <column name="login_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="username" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
-      <primary-key name="PRIMARY" columns="login_id"/>
-      <exported-key name="FK_roles" table="roles" schema="" catalog="marius" columns="login_id"/>
+    <table name="discipline" schema="" catalog="marius" type="TABLE">
+      <column name="discipline_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="discipline" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="discipline_id"/>
+      <foreign-key name="FK_discipline_user" columns="id" ref-table="user" ref-schema="" ref-catalog="marius" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_discipline_notes" table="notes" schema="" catalog="marius" columns="discipline_id"/>
+      <exported-key name="FK_discipline_rating" table="rating" schema="" catalog="marius" columns="discipline_id"/>
+      <index name="FK_discipline_user" unique="false" columns="id"/>
+    </table>
+    <table name="notes" schema="" catalog="marius" type="TABLE">
+      <column name="notes_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="notes_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="homework" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="notes" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="discipline_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="notes_id"/>
+      <foreign-key name="FK_discipline_notes" columns="discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_notes_user" columns="id" ref-table="user" ref-schema="" ref-catalog="marius" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_discipline_notes" unique="false" columns="discipline_id"/>
+      <index name="FK_notes_user" unique="false" columns="id"/>
+    </table>
+    <table name="rating" schema="" catalog="marius" type="TABLE">
+      <column name="rating_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="rating_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="rating" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="discipline_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="rating_id"/>
+      <foreign-key name="FK_discipline_rating" columns="discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_rating_user" columns="id" ref-table="user" ref-schema="" ref-catalog="marius" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_discipline_rating" unique="false" columns="discipline_id"/>
+      <index name="FK_rating_user" unique="false" columns="id"/>
     </table>
     <table name="roles" schema="" catalog="marius" type="TABLE">
       <column name="role_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="login_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="role" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="role_id"/>
-      <foreign-key name="FK_roles" columns="login_id" ref-table="logins" ref-schema="" ref-catalog="marius" ref-columns="login_id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="FK_roles" unique="false" columns="login_id"/>
+      <foreign-key name="FK_roles" columns="id" ref-table="user" ref-schema="" ref-catalog="marius" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_roles" unique="false" columns="id"/>
     </table>
     <table name="user" schema="" catalog="marius" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_discipline_user" table="discipline" schema="" catalog="marius" columns="id"/>
+      <exported-key name="FK_notes_user" table="notes" schema="" catalog="marius" columns="id"/>
+      <exported-key name="FK_rating_user" table="rating" schema="" catalog="marius" columns="id"/>
+      <exported-key name="FK_roles" table="roles" schema="" catalog="marius" columns="id"/>
+      <exported-key name="FK_user_login" table="user_data" schema="" catalog="marius" columns="id"/>
+    </table>
+    <table name="user_data" schema="" catalog="marius" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="adress" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="full_name_p1" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="full_name_p2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="phone" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_user_login" columns="id" ref-table="user" ref-schema="" ref-catalog="marius" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_user_login" unique="false" columns="id"/>
     </table>
     <table name="columns_priv" schema="" catalog="mysql" type="SYSTEM TABLE">
       <column name="Host" sqlType="CHAR" precision="60" scale="0" nullable="false" jdbcType="1" def="Jyc="/>

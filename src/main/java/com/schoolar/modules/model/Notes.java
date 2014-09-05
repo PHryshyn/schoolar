@@ -1,6 +1,7 @@
 package com.schoolar.modules.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "notes")
@@ -11,6 +12,9 @@ public class Notes {
     @Column(name = "notes_id")
     private int noteId;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "notes_date")
+    private Date noteDate;
 
     @Column(name = "homework")
     private String homework;
@@ -18,17 +22,23 @@ public class Notes {
     @Column(name = "notes")
     private String notes;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "discipline_id", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
     private Discipline discipline;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
+    private User user;
 
     public Notes() {
     }
 
-    public Notes(String homework, String notes, Discipline discipline) {
+    public Notes(Date noteDate, String homework, String notes, Discipline discipline, User user) {
+        this.noteDate = noteDate;
         this.homework = homework;
         this.notes = notes;
         this.discipline = discipline;
+        this.user = user;
     }
 
     public int getNoteId() {
@@ -37,6 +47,14 @@ public class Notes {
 
     public void setNoteId(int noteId) {
         this.noteId = noteId;
+    }
+
+    public Date getNoteDate() {
+        return noteDate;
+    }
+
+    public void setNoteDate(Date noteDate) {
+        this.noteDate = noteDate;
     }
 
     public String getHomework() {
@@ -61,5 +79,13 @@ public class Notes {
 
     public void setDiscipline(Discipline discipline) {
         this.discipline = discipline;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

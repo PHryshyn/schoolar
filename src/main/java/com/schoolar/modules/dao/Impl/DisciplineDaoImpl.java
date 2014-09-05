@@ -1,8 +1,8 @@
 package com.schoolar.modules.dao.Impl;
 
+import com.schoolar.modules.dao.CrudInterface;
 import com.schoolar.modules.dao.DisciplineDao;
 import com.schoolar.modules.model.Discipline;
-import com.schoolar.modules.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,31 +15,38 @@ public class DisciplineDaoImpl implements DisciplineDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void addDiscipline(Discipline discipline) {
-        sessionFactory.getCurrentSession().save(discipline);
-    }
 
-    public void updateDiscipline(Discipline discipline) {
-        Discipline disciplineToUpdate = getDiscipline(discipline.getDisciplineId());
+
+    public void update(Discipline discipline) {
+        Discipline disciplineToUpdate = getOne(discipline.getDisciplineId());
         disciplineToUpdate.setDiscipline(discipline.getDiscipline());
         sessionFactory.getCurrentSession().update(disciplineToUpdate);
 
     }
 
-    public Discipline getDiscipline(int disciplineId) {
+    @Override
+    public void add(Discipline discipline) {
+        sessionFactory.getCurrentSession().save(discipline);
+
+    }
+
+
+    @Override
+    public Discipline getOne(int disciplineId) {
         Discipline discipline = (Discipline) sessionFactory.getCurrentSession().get(Discipline.class, disciplineId);
         return discipline;
     }
 
-    public void deleteDiscipline(int disciplineId) {
-        Discipline discipline = getDiscipline(disciplineId);
+    @Override
+    public void delete(int disciplineId) {
+        Discipline discipline = getOne(disciplineId);
         if (discipline != null)
             sessionFactory.getCurrentSession().delete(discipline);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
-    public List<Discipline> getDisciplines() {
+    public List<Discipline> getList() {
         return sessionFactory.getCurrentSession().createCriteria(Discipline.class).list();
     }
-
 }
