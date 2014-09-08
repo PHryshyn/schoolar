@@ -15,6 +15,9 @@ public class User {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "role_id")
+    private Integer roleId;
+
     @NotEmpty
     @Column(name = "username")
     private String username;
@@ -27,47 +30,27 @@ public class User {
     @Column(name = "enabled")
     private int enabled;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany
+    @JoinColumn(name = "role_id")
     private Set<Role> role = new HashSet<Role>(0);
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private UserData userData;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private Set<Rating> ratingSet = new HashSet<Rating>(0);
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Discipline> disciplines = new HashSet<Discipline>(0);
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Notes> notesSet = new HashSet<Notes>(0);
-
+    private Set<Shedule> shedules = new HashSet<Shedule>(0);
 
     public User() {
     }
 
-    public User(String username, String password, int enabled) {
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-    }
-
-    public User(String username, String password, int enabled, Set<Role> role) {
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-        this.role = role;
-    }
-
-    public User(String username, String password, int enabled, Set<Role> role, UserData userData, Set<Rating> ratingSet, Set<Discipline> disciplines, Set<Notes> notesSet) {
+    public User(Integer roleId, String username, String password, int enabled, Set<Role> role, UserData userData, Set<Shedule> shedules) {
+        this.roleId = roleId;
         this.username = username;
         this.password = password;
         this.enabled = enabled;
         this.role = role;
         this.userData = userData;
-        this.ratingSet = ratingSet;
-        this.disciplines = disciplines;
-        this.notesSet = notesSet;
+        this.shedules = shedules;
     }
 
     public Integer getId() {
@@ -76,6 +59,14 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public String getUsername() {
@@ -118,27 +109,11 @@ public class User {
         this.userData = userData;
     }
 
-    public Set<Rating> getRatingSet() {
-        return ratingSet;
+    public Set<Shedule> getShedules() {
+        return shedules;
     }
 
-    public void setRatingSet(Set<Rating> ratingSet) {
-        this.ratingSet = ratingSet;
-    }
-
-    public Set<Discipline> getDisciplines() {
-        return disciplines;
-    }
-
-    public void setDisciplines(Set<Discipline> disciplines) {
-        this.disciplines = disciplines;
-    }
-
-    public Set<Notes> getNotesSet() {
-        return notesSet;
-    }
-
-    public void setNotesSet(Set<Notes> notesSet) {
-        this.notesSet = notesSet;
+    public void setShedules(Set<Shedule> shedules) {
+        this.shedules = shedules;
     }
 }

@@ -41,40 +41,31 @@ public class UserData {
     @Column(name = "phone")
     private Integer phone;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "discipline")
-    private Set<Discipline> disciplines;
 
     @OneToOne
     @PrimaryKeyJoinColumn
     private User user;
 
-
-
     public UserData() {
     }
 
-    public int getId() {
+    public UserData(String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone, User user) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.adress = adress;
+        this.fullNamePar1 = fullNamePar1;
+        this.fullNamePar2 = fullNamePar2;
+        this.phone = phone;
+        this.user = user;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return adress;
-    }
-
-    public void setAddress(String address) {
-        this.adress = address;
     }
 
     public String getFirstName() {
@@ -91,6 +82,14 @@ public class UserData {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAdress() {
@@ -125,11 +124,11 @@ public class UserData {
         this.phone = phone;
     }
 
-    public Set<Discipline> getDisciplines() {
-        return disciplines;
+    public User getUser() {
+        return user;
     }
 
-    public void setDisciplines(Set<Discipline> disciplines) {
-        this.disciplines = disciplines;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -16,6 +16,7 @@
         <mapping class="com.schoolar.modules.model.Notes"/>
         <mapping class="com.schoolar.modules.model.Role"/>
         <mapping class="com.schoolar.modules.model.Rating"/>
+        <mapping class="com.schoolar.modules.model.Shedule"/>
 
 
     </session-factory>
