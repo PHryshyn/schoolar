@@ -1,52 +1,44 @@
 package com.schoolar.modules.dao.Impl;
 
-import com.schoolar.modules.dao.CrudInterface;
 import com.schoolar.modules.dao.DisciplineDao;
 import com.schoolar.modules.model.Discipline;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository("disciplineDao")
-public class DisciplineDaoImpl implements DisciplineDao {
+public class DisciplineDaoImpl extends BasicCrudDaoImpl<Discipline, Integer> implements DisciplineDao {
 
-    @Autowired
-    private SessionFactory sessionFactory;
-
-
-
-    public void update(Discipline discipline) {
-        Discipline disciplineToUpdate = getOne(discipline.getDisciplineId());
-        disciplineToUpdate.setDiscipline(discipline.getDiscipline());
-        sessionFactory.getCurrentSession().update(disciplineToUpdate);
-
-    }
-
-    @Override
-    public void add(Discipline discipline) {
-        sessionFactory.getCurrentSession().save(discipline);
-
+    public DisciplineDaoImpl() {
+        super(Discipline.class);
     }
 
 
     @Override
-    public Discipline getOne(int disciplineId) {
-        Discipline discipline = (Discipline) sessionFactory.getCurrentSession().get(Discipline.class, disciplineId);
-        return discipline;
+    public void saveDiscipline(Discipline discipline) {
+        save(discipline);
     }
 
     @Override
-    public void delete(int disciplineId) {
-        Discipline discipline = getOne(disciplineId);
+    public void updateDiscipline(Discipline discipline) {
+        update(discipline);
+    }
+
+    @Override
+    public Discipline findByIdDiscipline(int disciplineId) {
+        return findById(disciplineId);
+    }
+
+    @Override
+    public void deleteDiscipline(int disciplineId) {
+        Discipline discipline = findByIdDiscipline(disciplineId);
         if (discipline != null)
-            sessionFactory.getCurrentSession().delete(discipline);
+        delete(discipline);
     }
 
-    @Override
     @SuppressWarnings("unchecked")
-    public List<Discipline> getList() {
-        return sessionFactory.getCurrentSession().createCriteria(Discipline.class).list();
+    @Override
+    public List<Discipline> getDisciplineList() {
+        return getCurrentSession().createCriteria(Discipline.class).list();
     }
 }

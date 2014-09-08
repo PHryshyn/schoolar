@@ -5,10 +5,10 @@ import com.schoolar.modules.model.Notes;
 
 import java.util.List;
 
-public interface NotesDao {
-    public void addNote(Notes note);
-    public void updateNote(Notes note);
-    public Notes getNote(int noteId);
-    public void deleteNote(int noteId);
-    public List<Notes> getNotes();
+public interface NotesDao extends BasicCrudDao<Notes, Integer> {
+    public void saveNotes(Notes notes);
+    public void updateNotes(Notes notes);
+    public Notes findByIdNotes(int noteId);
+    public void deleteNotes(int noteId);
+    public List<Notes> getNotesList();
 }

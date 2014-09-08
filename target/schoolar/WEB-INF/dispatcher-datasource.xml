@@ -18,6 +18,7 @@
     <context:annotation-config/>
 
 
+
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
@@ -33,6 +34,7 @@
         <property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>
         </property>
+        <!--<property name="packagesToScan" value="com.schoolar.modules"/> -->
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>

@@ -5,9 +5,9 @@ import com.schoolar.modules.model.UserData;
 import java.util.List;
 
 public interface UserDataService {
-    public void addUserData(UserData userData);
+    public void saveUserData(UserData userData);
     public void updateUserData(UserData userData);
-    public UserData getOneUserData(int id);
-    public void deleteUserData(int id);
-    public List<UserData> getUserData();
+    public UserData findByIdUserData(Integer id);
+    public void deleteUserData(Integer id);
+    public List<UserData> getUserDataList();
 }

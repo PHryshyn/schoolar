@@ -2,36 +2,38 @@ package com.schoolar.modules.dao.Impl;
 
 import com.schoolar.modules.dao.RatingDao;
 import com.schoolar.modules.model.Rating;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository("ratingDao")
-public class RatingDaoImpl implements RatingDao {
+public class RatingDaoImpl extends BasicCrudDaoImpl<Rating, Integer> implements RatingDao {
 
-    @Autowired
-    private SessionFactory sessionFactory;
-
-    public void addRating(Rating rating) {
-        sessionFactory.getCurrentSession().save(rating);
+    protected RatingDaoImpl() {
+        super(Rating.class);
     }
 
-    public Rating getOneRating(int ratingId) {
-        Rating rating = (Rating) sessionFactory.getCurrentSession().get(Rating.class, ratingId);
-        return rating;
+    @Override
+    public void saveRating(Rating rating) {
+        save(rating);
     }
 
+    @Override
+    public Rating findByIdRating(int ratingId) {
+        return findById(ratingId);
+    }
+
+    @Override
     public void deleteRating(int ratingId) {
-       Rating rating = getOneRating(ratingId);
+        Rating rating = findByIdRating(ratingId);
         if (rating != null)
-            sessionFactory.getCurrentSession().delete(rating);
+            delete(rating);
+
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public List<Rating> getRatingList() {
-        return sessionFactory.getCurrentSession().createCriteria(Rating.class).list();
+        return getCurrentSession().createCriteria(Rating.class).list();
     }
-
 }

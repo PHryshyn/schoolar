@@ -4,9 +4,9 @@ import com.schoolar.modules.model.Rating;
 
 import java.util.List;
 
-public interface RatingDao {
-    public void addRating(Rating rating);
-    public Rating getOneRating(int ratingId);
-    public void deleteRating(int RatingId);
+public interface RatingDao extends BasicCrudDao<Rating, Integer> {
+    public void saveRating(Rating rating);
+    public Rating findByIdRating(int ratingId);
+    public void deleteRating(int ratingId);
     public List<Rating> getRatingList();
 }

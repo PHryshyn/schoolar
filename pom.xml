@@ -35,6 +35,22 @@
       </dependency>
 
       <dependency>
+          <groupId>org.apache.tiles</groupId>
+          <artifactId>tiles-servlet</artifactId>
+          <version>${apache.tiles}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.tiles</groupId>
+          <artifactId>tiles-template</artifactId>
+          <version>${apache.tiles}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.tiles</groupId>
+          <artifactId>tiles-el</artifactId>
+          <version>${apache.tiles}</version>
+      </dependency>
+
+      <dependency>
           <groupId>log4j</groupId>
           <artifactId>log4j</artifactId>
           <version>${log4j.version}</version>
@@ -168,6 +184,12 @@
           <groupId>javax.servlet</groupId>
           <artifactId>servlet-api</artifactId>
           <version>3.0-alpha-1</version>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
       </dependency>
 
 

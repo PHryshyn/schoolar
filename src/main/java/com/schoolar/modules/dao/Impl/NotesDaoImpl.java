@@ -2,43 +2,43 @@ package com.schoolar.modules.dao.Impl;
 
 import com.schoolar.modules.dao.NotesDao;
 import com.schoolar.modules.model.Notes;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository("notesDao")
-public class NotesDaoImpl implements NotesDao {
+public class NotesDaoImpl extends BasicCrudDaoImpl<Notes, Integer> implements NotesDao {
 
-    @Autowired
-    private SessionFactory sessionFactory;
-
-    public void addNote(Notes note) {
-        sessionFactory.getCurrentSession().save(note);
+    protected NotesDaoImpl() {
+        super(Notes.class);
     }
 
-    public void updateNote(Notes note) {
-        Notes notesToUpdate = getNote(note.getNoteId());
-        notesToUpdate.setNotes(note.getNotes());
-        sessionFactory.getCurrentSession().update(notesToUpdate);
 
+    @Override
+    public void saveNotes(Notes notes) {
+        save(notes);
     }
 
-    public Notes getNote(int noteId) {
-        Notes note = (Notes) sessionFactory.getCurrentSession().get(Notes.class, noteId);
-        return note;
+    @Override
+    public void updateNotes(Notes notes) {
+        update(notes);
     }
 
-    public void deleteNote(int noteId) {
-        Notes note = getNote(noteId);
-        if (note != null)
-            sessionFactory.getCurrentSession().delete(note);
+    @Override
+    public Notes findByIdNotes(int noteId) {
+        return findById(noteId);
+    }
+
+    @Override
+    public void deleteNotes(int noteId) {
+        Notes notes = findByIdNotes(noteId);
+        if (notes != null)
+        delete(notes);
     }
 
     @SuppressWarnings("unchecked")
-    public List<Notes> getNotes() {
-        return sessionFactory.getCurrentSession().createCriteria(Notes.class).list();
+    @Override
+    public List<Notes> getNotesList() {
+        return getCurrentSession().createCriteria(Notes.class).list();
     }
-
 }

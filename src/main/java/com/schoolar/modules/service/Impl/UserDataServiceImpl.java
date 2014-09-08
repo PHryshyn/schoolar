@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
-@Service
+@Service("userDataService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class UserDataServiceImpl implements UserDataService {
 
@@ -19,29 +19,38 @@ public class UserDataServiceImpl implements UserDataService {
     @Qualifier(value = "userDataDao")
     private UserDataDao userDataDao;
 
-    @Transactional
-    public void addUserData(UserData userData) {
-        userDataDao.addUserData(userData);
+    @Override
+    @Transactional(readOnly = false)
+    public void saveUserData(UserData userData) {
+        userDataDao.saveUserData(userData);
     }
 
-    @Transactional
+
+    @Override
+    @Transactional(readOnly = false)
     public void updateUserData(UserData userData) {
         userDataDao.updateUserData(userData);
     }
 
+
+    @Override
     @Transactional
-    public UserData getOneUserData(int id) {
-        return userDataDao.getOneUserData(id);
+    public UserData findByIdUserData(Integer id) {
+        return userDataDao.findByIdUserData(id);
     }
 
-    @Transactional
-    public void deleteUserData(int id) {
+
+    @Override
+    @Transactional(readOnly = false)
+    public void deleteUserData(Integer id) {
         userDataDao.deleteUserData(id);
     }
 
+
+    @Override
     @Transactional
-    public List<UserData> getUserData() {
-        return userDataDao.getUserData();
+    public List<UserData> getUserDataList() {
+        return userDataDao.getUserDataList();
     }
 
     public UserDataServiceImpl() {

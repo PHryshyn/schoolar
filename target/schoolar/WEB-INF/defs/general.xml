@@ -10,21 +10,26 @@
     <definition name="home" extends="common">
         <put-attribute name="title" value="Schoolar" />
         <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+        <put-attribute name="current" value="home"/>
     </definition>
 
     <definition name="login" extends="common">
-        <put-attribute name="title" value="Schoolar" />
+        <put-attribute name="title" value="login" />
+
         <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+
     </definition>
 
     <definition name="admin" extends="common">
         <put-attribute name="title" value="Schoolar" />
         <put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
+        <put-attribute name="current" value="admin"/>
     </definition>
 
-    <definition name="admin/add" extends="common">
-        <put-attribute name="title" value="Schoolar" />
-        <put-attribute name="body" value="/WEB-INF/views/addUserForm.jsp" />
+    <definition name="user-register" extends="common">
+        <put-attribute name="title" value="User registration" />
+        <put-attribute name="body" value="/WEB-INF/views/user-register.jsp" />
+        <put-attribute name="current" value="user-register"/>
     </definition>
 
 

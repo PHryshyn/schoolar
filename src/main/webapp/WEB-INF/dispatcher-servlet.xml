@@ -13,7 +13,7 @@
 
     <context:component-scan base-package="com.schoolar.modules" />
 
-  <!--  <bean
+<bean
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <value>/WEB-INF/views/</value>
@@ -22,33 +22,41 @@
             <value>.jsp</value>
         </property>
     </bean>
--->
+
+
+
+
+   <!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+
+    </bean>
 
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
             <list>
                 <value>/WEB-INF/defs/general.xml</value>
-
             </list>
         </property>
 
-    </bean>
-
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
 
     </bean>
+-->
+    <!--
+
+    <bean
+            class ="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+-->
 
     <bean id="userDataDao" class="com.schoolar.modules.dao.Impl.UserDataDaoImpl"/>
     <bean id="userDataService" class="com.schoolar.modules.service.Impl.UserDataServiceImpl"/>
     <bean id="userDao" class="com.schoolar.modules.dao.Impl.UserDaoImpl"/>
     <bean id="userService" class="com.schoolar.modules.service.Impl.UserServiceImpl"/>
     <bean id="disciplineDao" class="com.schoolar.modules.dao.Impl.DisciplineDaoImpl"/>
-
+    <bean id="disciplineService" class="com.schoolar.modules.service.Impl.DisciplineServiceImpl"/>
     <bean id="notesDao" class="com.schoolar.modules.dao.Impl.NotesDaoImpl"/>
-
+    <bean id="notesService" class="com.schoolar.modules.service.Impl.NotesServiceImpl"/>
     <bean id="ratingDao" class="com.schoolar.modules.dao.Impl.RatingDaoImpl"/>
-
+    <bean id="ratingService" class="com.schoolar.modules.service.Impl.RatingServiceImpl"/>
 
 
 </beans>

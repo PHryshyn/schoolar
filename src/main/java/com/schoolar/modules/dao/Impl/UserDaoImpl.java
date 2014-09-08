@@ -1,23 +1,40 @@
 package com.schoolar.modules.dao.Impl;
 
 import com.schoolar.modules.dao.UserDao;
-import com.schoolar.modules.model.Role;
 import com.schoolar.modules.model.User;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository("userDao")
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl extends BasicCrudDaoImpl<User, String> implements UserDao {
 
-    @Autowired
-    private SessionFactory sessionFactory;
-
-    public void addUsername(User username) {
-        sessionFactory.getCurrentSession().save(username);
+    protected UserDaoImpl(){
+        super(User.class);
     }
 
-    public void addRole(Role role) {
-        sessionFactory.getCurrentSession().save(role);
+    @Override
+    public void saveUser(User user) {
+        save(user);
     }
+
+    @Override
+    public void deleteUser(String username) {
+        User user = findById(username);
+        if (user != null)
+        delete(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        update(user);
+    }
+
+
+  /*  @Override
+    public User findByIdUser(Integer id) {
+        return findById(id);
+    }
+
+
+*/
+
 }
