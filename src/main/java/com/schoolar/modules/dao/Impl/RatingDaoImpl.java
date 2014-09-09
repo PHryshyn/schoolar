@@ -24,6 +24,16 @@ public class RatingDaoImpl extends BasicCrudDaoImpl<Rating, Integer> implements 
     }
 
     @Override
+    public void updateRating(Rating rating) {
+        Rating ratingToUpdate = findByIdRating(rating.getRatingId());
+        ratingToUpdate.setRating(rating.getRating());
+        ratingToUpdate.setRatingDate(rating.getRatingDate());
+        ratingToUpdate.setUser(rating.getUser());
+        ratingToUpdate.setDiscipline(rating.getDiscipline());
+        update(rating);
+    }
+
+    @Override
     public void deleteRating(int ratingId) {
         Rating rating = findByIdRating(ratingId);
         if (rating != null)

@@ -21,7 +21,9 @@ public class DisciplineDaoImpl extends BasicCrudDaoImpl<Discipline, Integer> imp
 
     @Override
     public void updateDiscipline(Discipline discipline) {
-        update(discipline);
+        Discipline disciplineToUpdate = findByIdDiscipline(discipline.getDisciplineId());
+        disciplineToUpdate.setDiscipline(discipline.getDiscipline());
+        update(disciplineToUpdate);
     }
 
     @Override

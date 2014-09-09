@@ -34,23 +34,20 @@ public class User {
     @JoinColumn(name = "role_id")
     private Set<Role> role = new HashSet<Role>(0);
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private UserData userData;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Shedule> shedules = new HashSet<Shedule>(0);
+    @OneToOne(fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
+    private Shedule shedule;
 
     public User() {
     }
 
-    public User(Integer roleId, String username, String password, int enabled, Set<Role> role, UserData userData, Set<Shedule> shedules) {
+    public User(Integer roleId, String username, String password, int enabled, Set<Role> role, Shedule shedule) {
         this.roleId = roleId;
         this.username = username;
         this.password = password;
         this.enabled = enabled;
         this.role = role;
-        this.userData = userData;
-        this.shedules = shedules;
+        this.shedule = shedule;
     }
 
     public Integer getId() {
@@ -101,19 +98,11 @@ public class User {
         this.role = role;
     }
 
-    public UserData getUserData() {
-        return userData;
+    public Shedule getShedule() {
+        return shedule;
     }
 
-    public void setUserData(UserData userData) {
-        this.userData = userData;
-    }
-
-    public Set<Shedule> getShedules() {
-        return shedules;
-    }
-
-    public void setShedules(Set<Shedule> shedules) {
-        this.shedules = shedules;
+    public void setShedule(Shedule shedule) {
+        this.shedule = shedule;
     }
 }

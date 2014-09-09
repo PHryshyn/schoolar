@@ -41,7 +41,6 @@ public class UserData {
     @Column(name = "phone")
     private Integer phone;
 
-
     @OneToOne
     @PrimaryKeyJoinColumn
     private User user;

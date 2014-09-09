@@ -21,6 +21,12 @@ public class NotesDaoImpl extends BasicCrudDaoImpl<Notes, Integer> implements No
 
     @Override
     public void updateNotes(Notes notes) {
+        Notes notesToUpdate = findByIdNotes(notes.getNoteId());
+        notesToUpdate.setNotes(notes.getNotes());
+        notesToUpdate.setHomework(notes.getHomework());
+        notesToUpdate.setDiscipline(notes.getDiscipline());
+        notesToUpdate.setNoteDate(notes.getNoteDate());
+        notesToUpdate.setUser(notes.getUser());
         update(notes);
     }
 

@@ -20,6 +20,15 @@ public class UserDataDaoImpl extends BasicCrudDaoImpl<UserData, Integer> impleme
 
     @Override
     public void updateUserData(UserData userData) {
+        UserData userDataToUpdate = findByIdUserData(userData.getId());
+        userDataToUpdate.setFirstName(userData.getFirstName());
+        userDataToUpdate.setLastName(userData.getLastName());
+        userDataToUpdate.setAdress(userData.getAdress());
+        userDataToUpdate.setEmail(userData.getEmail());
+        userDataToUpdate.setFullNamePar1(userData.getFullNamePar1());
+        userDataToUpdate.setFullNamePar2(userData.getFullNamePar2());
+        userData.setPhone(userData.getPhone());
+        userData.setUser(userData.getUser());
         update(userData);
     }
 

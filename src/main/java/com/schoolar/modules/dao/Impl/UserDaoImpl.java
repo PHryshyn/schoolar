@@ -4,8 +4,10 @@ import com.schoolar.modules.dao.UserDao;
 import com.schoolar.modules.model.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository("userDao")
-public class UserDaoImpl extends BasicCrudDaoImpl<User, String> implements UserDao {
+public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements UserDao {
 
     protected UserDaoImpl(){
         super(User.class);
@@ -17,24 +19,33 @@ public class UserDaoImpl extends BasicCrudDaoImpl<User, String> implements UserD
     }
 
     @Override
-    public void deleteUser(String username) {
-        User user = findById(username);
+    public void deleteUser(Integer id) {
+        User user = findById(id);
         if (user != null)
         delete(user);
     }
 
     @Override
     public void updateUser(User user) {
-        update(user);
+        User userToUpdate = findByIdUser(user.getId());
+        userToUpdate.setUsername(user.getUsername());
+        userToUpdate.setPassword(user.getPassword());
+        userToUpdate.setRole(user.getRole());
+        update(userToUpdate);
     }
 
 
-  /*  @Override
+    @Override
     public User findByIdUser(Integer id) {
         return findById(id);
     }
 
+    @SuppressWarnings("unchecked")
+    public List<User> getUserList(){
+        return getCurrentSession().createCriteria(User.class).list();
+    }
 
-*/
+
+
 
 }
