@@ -19,6 +19,11 @@
 
 </head>
 <body>
+
+<%@taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx"%>
+
+<tilesx:useAttribute name="current" />
+
 <div class="container">
     <!-- Static navbar -->
     <div class="navbar navbar-default" role="navigation">
