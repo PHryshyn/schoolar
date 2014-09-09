@@ -26,7 +26,7 @@ public class UserController {
 
     @RequestMapping("/schoolbook")
     public String users(Model model) {
-        model.addAttribute("users", userDataService.getUserDataList());
+        model.addAttribute("users", userDataService.getList());
         return "users";
     }
 

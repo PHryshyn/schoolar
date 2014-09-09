@@ -2,6 +2,7 @@ package com.schoolar.modules.dao.Impl;
 
 import com.schoolar.modules.dao.NotesDao;
 import com.schoolar.modules.model.Notes;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,15 +14,9 @@ public class NotesDaoImpl extends BasicCrudDaoImpl<Notes, Integer> implements No
         super(Notes.class);
     }
 
-
-    @Override
-    public void saveNotes(Notes notes) {
-        save(notes);
-    }
-
     @Override
     public void updateNotes(Notes notes) {
-        Notes notesToUpdate = findByIdNotes(notes.getNoteId());
+        Notes notesToUpdate = findById(notes.getNoteId());
         notesToUpdate.setNotes(notes.getNotes());
         notesToUpdate.setHomework(notes.getHomework());
         notesToUpdate.setDiscipline(notes.getDiscipline());
@@ -30,21 +25,4 @@ public class NotesDaoImpl extends BasicCrudDaoImpl<Notes, Integer> implements No
         update(notes);
     }
 
-    @Override
-    public Notes findByIdNotes(int noteId) {
-        return findById(noteId);
-    }
-
-    @Override
-    public void deleteNotes(int noteId) {
-        Notes notes = findByIdNotes(noteId);
-        if (notes != null)
-        delete(notes);
-    }
-
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Notes> getNotesList() {
-        return getCurrentSession().createCriteria(Notes.class).list();
-    }
 }

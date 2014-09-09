@@ -13,7 +13,10 @@ import java.util.List;
 
 @Service("disciplineService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class DisciplineServiceImpl implements DisciplineService {
+public class DisciplineServiceImpl extends BasicServiceImpl<Discipline, Integer> implements DisciplineService {
+
+    public DisciplineServiceImpl() {
+    }
 
     @Autowired
     @Qualifier(value = "disciplineDao")
@@ -21,34 +24,8 @@ public class DisciplineServiceImpl implements DisciplineService {
 
     @Override
     @Transactional(readOnly = false)
-    public void saveDiscipline(Discipline discipline) {
-        disciplineDao.saveDiscipline(discipline);
-    }
-
-    @Override
-    @Transactional(readOnly = false)
     public void updateDiscipline(Discipline discipline) {
         disciplineDao.updateDiscipline(discipline);
     }
 
-    @Override
-    @Transactional
-    public Discipline findByIdDiscipline(int disciplineId) {
-        return disciplineDao.findByIdDiscipline(disciplineId);
-    }
-
-    @Override
-    @Transactional(readOnly = false)
-    public void deleteDiscipline(int disciplineId) {
-        disciplineDao.deleteDiscipline(disciplineId);
-    }
-
-    @Override
-    @Transactional
-    public List<Discipline> getDisciplineList() {
-        return disciplineDao.getDisciplineList();
-    }
-
-    public DisciplineServiceImpl() {
-    }
 }

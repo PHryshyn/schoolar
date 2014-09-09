@@ -14,37 +14,17 @@ import java.util.List;
 
 @Service("ratingService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class RatingServiceImpl implements RatingService {
+public class RatingServiceImpl extends BasicServiceImpl<Rating, Integer> implements RatingService {
 
     @Autowired
     @Qualifier(value = "ratingDao")
     private RatingDao ratingDao;
 
-
-    @Override
-    @Transactional(readOnly = false)
-    public void saveRating(Rating rating) {
-        ratingDao.saveRating(rating);
-    }
-
-    @Override
-    @Transactional
-    public Rating findByIdRating(int ratingId) {
-        return ratingDao.findByIdRating(ratingId);
-    }
-
-    @Override
-    @Transactional(readOnly = false)
-    public void deleteRating(int ratingId) {
-        ratingDao.deleteRating(ratingId);
-    }
-
-    @Override
-    @Transactional
-    public List<Rating> getRatingList() {
-        return ratingDao.getRatingList();
-    }
-
     public RatingServiceImpl() {
+    }
+
+    @Override
+    public void updateRating(Rating rating) {
+        ratingDao.updateRating(rating);
     }
 }

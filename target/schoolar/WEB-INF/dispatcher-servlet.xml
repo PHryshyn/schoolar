@@ -52,6 +52,6 @@
     <bean id="notesService" class="com.schoolar.modules.service.Impl.NotesServiceImpl"/>
     <bean id="ratingDao" class="com.schoolar.modules.dao.Impl.RatingDaoImpl"/>
     <bean id="ratingService" class="com.schoolar.modules.service.Impl.RatingServiceImpl"/>
-
+   <!-- <bean id="basicCrudDao" class="com.schoolar.modules.dao.Impl.BasicCrudDaoImpl"/> -->
 
 </beans>

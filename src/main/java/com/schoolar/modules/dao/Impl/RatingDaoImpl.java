@@ -2,6 +2,7 @@ package com.schoolar.modules.dao.Impl;
 
 import com.schoolar.modules.dao.RatingDao;
 import com.schoolar.modules.model.Rating;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,18 +15,8 @@ public class RatingDaoImpl extends BasicCrudDaoImpl<Rating, Integer> implements 
     }
 
     @Override
-    public void saveRating(Rating rating) {
-        save(rating);
-    }
-
-    @Override
-    public Rating findByIdRating(int ratingId) {
-        return findById(ratingId);
-    }
-
-    @Override
     public void updateRating(Rating rating) {
-        Rating ratingToUpdate = findByIdRating(rating.getRatingId());
+        Rating ratingToUpdate = findById(rating.getRatingId());
         ratingToUpdate.setRating(rating.getRating());
         ratingToUpdate.setRatingDate(rating.getRatingDate());
         ratingToUpdate.setUser(rating.getUser());
@@ -33,17 +24,4 @@ public class RatingDaoImpl extends BasicCrudDaoImpl<Rating, Integer> implements 
         update(rating);
     }
 
-    @Override
-    public void deleteRating(int ratingId) {
-        Rating rating = findByIdRating(ratingId);
-        if (rating != null)
-            delete(rating);
-
-    }
-
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Rating> getRatingList() {
-        return getCurrentSession().createCriteria(Rating.class).list();
-    }
 }

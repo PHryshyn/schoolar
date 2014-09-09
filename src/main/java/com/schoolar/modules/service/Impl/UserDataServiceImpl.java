@@ -13,18 +13,14 @@ import java.util.List;
 
 @Service("userDataService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class UserDataServiceImpl implements UserDataService {
+public class UserDataServiceImpl extends BasicServiceImpl<UserData, Integer> implements UserDataService {
 
     @Autowired
     @Qualifier(value = "userDataDao")
     private UserDataDao userDataDao;
 
-    @Override
-    @Transactional(readOnly = false)
-    public void saveUserData(UserData userData) {
-        userDataDao.saveUserData(userData);
+    public UserDataServiceImpl() {
     }
-
 
     @Override
     @Transactional(readOnly = false)
@@ -32,27 +28,4 @@ public class UserDataServiceImpl implements UserDataService {
         userDataDao.updateUserData(userData);
     }
 
-
-    @Override
-    @Transactional
-    public UserData findByIdUserData(Integer id) {
-        return userDataDao.findByIdUserData(id);
-    }
-
-
-    @Override
-    @Transactional(readOnly = false)
-    public void deleteUserData(Integer id) {
-        userDataDao.deleteUserData(id);
-    }
-
-
-    @Override
-    @Transactional
-    public List<UserData> getUserDataList() {
-        return userDataDao.getUserDataList();
-    }
-
-    public UserDataServiceImpl() {
-    }
 }

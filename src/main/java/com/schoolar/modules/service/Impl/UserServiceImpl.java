@@ -11,23 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("userService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends BasicServiceImpl<User, Integer> implements UserService {
 
     @Autowired
     @Qualifier(value = "userDao")
     private UserDao userDao;
 
-    @Transactional(readOnly = false)
-    @Override
-    public void saveUser(User user) {
-        userDao.saveUser(user);
-    }
-
-    @Transactional(readOnly = false)
-    @Override
-    public void deleteUser(String username) {
-        userDao.deleteUser(username);
-
+    public UserServiceImpl() {
     }
 
     @Transactional(readOnly = false)
@@ -36,19 +26,4 @@ public class UserServiceImpl implements UserService {
         userDao.updateUser(user);
     }
 
-   /* @Transactional
-    @Override
-    public User findByIdUser(Integer id) {
-        return findByIdUser(id);
-    }*/
-
-    @Override
-    @Transactional
-    public User findByUsername(String username) {
-        return userDao.findById(username);
-    }
-
-
-    public UserServiceImpl() {
-    }
 }

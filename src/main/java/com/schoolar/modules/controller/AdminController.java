@@ -1,8 +1,7 @@
 package com.schoolar.modules.controller;
 
 import com.schoolar.modules.model.User;
-import com.schoolar.modules.service.UserDataService;
-import com.schoolar.modules.service.UserService;
+import com.schoolar.modules.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired(required=false)
@@ -25,49 +24,20 @@ public class AdminController {
     @Qualifier(value = "userService")
     private UserService userService;
 
+    @Autowired
+    @Qualifier(value = "disciplineService")
+    private DisciplineService disciplineService;
 
+    @Autowired
+    @Qualifier(value = "notesService")
+    private NotesService notesService;
 
- /*   @RequestMapping("/register")
-    public String registerUser() {
-        return "user-register";
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String doRegisterUser(@ModelAttribute("user")User user) {
-        userService.saveUser(user);
-        return "user-register";
-    }
-    */
-
-  /*  @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String registerUser() {
-        return "user-register";
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public ModelAndView addUser(@ModelAttribute("user") User user,
-                                   BindingResult result) {
-        userService.saveUser(user);
-        return new ModelAndView("user-register");
-    }
-*/
-/*
-    @RequestMapping(value = "/save", method = RequestMethod.GET)
-    public ModelAndView saveUser(@ModelAttribute("user")User user,
-                                    BindingResult result) {
-        userService.saveUser(user);
-        return new ModelAndView("redirect:/register-form");
-    }
+    @Autowired
+    @Qualifier(value = "ratingService")
+    private RatingService ratingService;
 
 
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public ModelAndView addUser(@ModelAttribute("user") User user,
-                                   BindingResult result) {
-
-        return new ModelAndView("user-register");
-    }
-*/
   @RequestMapping(value = "/register", method = RequestMethod.GET)
   public ModelAndView createUser(@ModelAttribute("user") User user,
                                  BindingResult result) {
@@ -87,7 +57,7 @@ public class AdminController {
       model.addAttribute("saved", "success");
       return "myaccount";*/
 
-      userService.saveUser(user);
+      userService.save(user);
       return new ModelAndView("redirect:/user-register");
   }
 }

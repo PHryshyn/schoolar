@@ -15,32 +15,10 @@ public class DisciplineDaoImpl extends BasicCrudDaoImpl<Discipline, Integer> imp
 
 
     @Override
-    public void saveDiscipline(Discipline discipline) {
-        save(discipline);
-    }
-
-    @Override
     public void updateDiscipline(Discipline discipline) {
-        Discipline disciplineToUpdate = findByIdDiscipline(discipline.getDisciplineId());
+        Discipline disciplineToUpdate = findById(discipline.getDisciplineId());
         disciplineToUpdate.setDiscipline(discipline.getDiscipline());
         update(disciplineToUpdate);
     }
 
-    @Override
-    public Discipline findByIdDiscipline(int disciplineId) {
-        return findById(disciplineId);
-    }
-
-    @Override
-    public void deleteDiscipline(int disciplineId) {
-        Discipline discipline = findByIdDiscipline(disciplineId);
-        if (discipline != null)
-        delete(discipline);
-    }
-
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Discipline> getDisciplineList() {
-        return getCurrentSession().createCriteria(Discipline.class).list();
-    }
 }

@@ -4,9 +4,11 @@ package com.schoolar.modules.dao.Impl;
 import com.schoolar.modules.dao.BasicCrudDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.metamodel.source.annotations.entity.EntityClass;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class BasicCrudDaoImpl<E, I extends Serializable> implements BasicCrudDao<E, I> {
 
@@ -40,8 +42,15 @@ public class BasicCrudDaoImpl<E, I extends Serializable> implements BasicCrudDao
     }
 
     @Override
-    public void delete(E e) {
+    public void delete(I id) {
+        E e = findById(id);
+        if (e != null)
         getCurrentSession().delete(e);
+    }
+
+    @Override
+    public List<E> getList() {
+        return getCurrentSession().createCriteria(EntityClass.class).list();
     }
 
 

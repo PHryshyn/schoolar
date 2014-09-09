@@ -5,10 +5,8 @@ import com.schoolar.modules.model.Discipline;
 
 import java.util.List;
 
-public interface DisciplineService {
-    void saveDiscipline(Discipline discipline);
+public interface DisciplineService extends BasicService<Discipline, Integer> {
+
     void updateDiscipline(Discipline discipline);
-    Discipline findByIdDiscipline(int disciplineId);
-    void deleteDiscipline(int disciplineId);
-    List<Discipline> getDisciplineList();
+
 }
