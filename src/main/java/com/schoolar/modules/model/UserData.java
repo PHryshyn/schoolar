@@ -41,14 +41,12 @@ public class UserData {
     @Column(name = "phone")
     private Integer phone;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
-    private User user;
+
 
     public UserData() {
     }
 
-    public UserData(String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone, User user) {
+    public UserData(String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -56,7 +54,6 @@ public class UserData {
         this.fullNamePar1 = fullNamePar1;
         this.fullNamePar2 = fullNamePar2;
         this.phone = phone;
-        this.user = user;
     }
 
     public Integer getId() {
@@ -123,11 +120,4 @@ public class UserData {
         this.phone = phone;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

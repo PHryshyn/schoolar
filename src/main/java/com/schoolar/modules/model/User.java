@@ -1,5 +1,6 @@
 package com.schoolar.modules.model;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -15,9 +16,6 @@ public class User {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "role_id")
-    private Integer roleId;
-
     @NotEmpty
     @Column(name = "username")
     private String username;
@@ -30,24 +28,51 @@ public class User {
     @Column(name = "enabled")
     private int enabled;
 
-    @OneToMany
-    @JoinColumn(name = "role_id")
-    private Set<Role> role = new HashSet<Role>(0);
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Email
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "adress")
+    private String adress;
+
+    @Column(name = "full_name_p1")
+    private String fullNamePar1;
+
+    @Column(name = "full_name_p2")
+    private String fullNamePar2;
+
+    @Column(name = "phone")
+    private Integer phone;
 
     @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private Shedule shedule;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     public User() {
     }
 
-    public User(Integer roleId, String username, String password, int enabled, Set<Role> role, Shedule shedule) {
-        this.roleId = roleId;
+    public User(String username, String password, int enabled, String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone, Shedule shedule, Role role) {
         this.username = username;
         this.password = password;
         this.enabled = enabled;
-        this.role = role;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.adress = adress;
+        this.fullNamePar1 = fullNamePar1;
+        this.fullNamePar2 = fullNamePar2;
+        this.phone = phone;
         this.shedule = shedule;
+        this.role = role;
     }
 
     public Integer getId() {
@@ -56,14 +81,6 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
     }
 
     public String getUsername() {
@@ -90,12 +107,60 @@ public class User {
         this.enabled = enabled;
     }
 
-    public Set<Role> getRole() {
-        return role;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setRole(Set<Role> role) {
-        this.role = role;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public String getFullNamePar1() {
+        return fullNamePar1;
+    }
+
+    public void setFullNamePar1(String fullNamePar1) {
+        this.fullNamePar1 = fullNamePar1;
+    }
+
+    public String getFullNamePar2() {
+        return fullNamePar2;
+    }
+
+    public void setFullNamePar2(String fullNamePar2) {
+        this.fullNamePar2 = fullNamePar2;
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Integer phone) {
+        this.phone = phone;
     }
 
     public Shedule getShedule() {
@@ -104,5 +169,13 @@ public class User {
 
     public void setShedule(Shedule shedule) {
         this.shedule = shedule;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

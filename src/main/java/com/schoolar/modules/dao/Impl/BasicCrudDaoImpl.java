@@ -28,7 +28,7 @@ public class BasicCrudDaoImpl<E, I extends Serializable> implements BasicCrudDao
 
     @Override
     public void save(E e) {
-        getCurrentSession().save(e);
+        getCurrentSession().saveOrUpdate(e);
     }
 
     @Override

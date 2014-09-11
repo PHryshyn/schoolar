@@ -1,74 +1,30 @@
-CREATE TABLE `user` (
-  `id` int(11) unsigned NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `enabled` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE `roles` (
-  `role_id` int(10) unsigned NOT NULL,
-  `id` int(11) unsigned NOT NULL,
-  `role` varchar(45) NOT NULL,
-  PRIMARY KEY (`role_id`),
-  KEY `FK_roles` (`id`),
-  CONSTRAINT `FK_roles` FOREIGN KEY (`id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE shedule (
+  shedule_id INT(11) AUTO_INCREMENT,
+  discipline_id VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`shedule_id`) )
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
 
 
-CREATE TABLE `user_data` (
-  `id` int(11) unsigned NOT NULL,
-  `adress` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `first_name` varchar(255) DEFAULT NULL,
-  `full_name_p1` varchar(255) DEFAULT NULL,
-  `full_name_p2` varchar(255) DEFAULT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
-  `phone` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-   KEY `FK_user_login` (`id`),
-   CONSTRAINT `FK_user_login` FOREIGN KEY (`id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE `discipline` (
-  `discipline_id` int(11) unsigned NOT NULL,
-  `id` int(11) unsigned NOT NULL,
-  `discipline` varchar(45) NOT NULL,
-  PRIMARY KEY (`discipline_id`),
-  KEY `FK_discipline_user` (`id`),
-  CONSTRAINT `FK_discipline_user` FOREIGN KEY (`id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-CREATE TABLE `rating` (
-  `rating_id` int(11) unsigned NOT NULL,
-  `rating_date` datetime,
-  `rating` int(11),
-  `id` int(11)  unsigned NOT NULL,
-  `discipline_id` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`rating_id`),
-  KEY `FK_rating_user` (`id`),
-  CONSTRAINT `FK_rating_user` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
-  KEY `FK_discipline_rating` (`discipline_id`),
-  CONSTRAINT `FK_discipline_rating` FOREIGN KEY (`discipline_id`) REFERENCES `discipline` (`discipline_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE `notes` (
-  `notes_id` int(11) unsigned NOT NULL,
-  `notes_date` datetime,
-  `homework` varchar(45),
-  `notes` varchar(45),
-  `id` int(11)  unsigned NOT NULL,
-  `discipline_id` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`notes_id`),
-  KEY `FK_notes_user` (`id`),
-  CONSTRAINT `FK_notes_user` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
-  KEY `FK_discipline_notes` (`discipline_id`),
-  CONSTRAINT `FK_discipline_notes` FOREIGN KEY (`discipline_id`) REFERENCES `discipline` (`discipline_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
+CREATE  TABLE user (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(45) NOT NULL ,
+  password VARCHAR(60) NOT NULL ,
+  enabled TINYINT NOT NULL DEFAULT 1 ,
+  first_name VARCHAR(45) NOT NULL,
+  last_name VARCHAR(45) NOT NULL,
+  email VARCHAR(45),
+  adress VARCHAR(45),
+  full_name_p1 VARCHAR(45),
+  full_name_p2 VARCHAR(45),
+  phone INT(20),
+  shedule_id INT(11),
+  PRIMARY KEY (id),
+  INDEX `fk_shedule_user` (`shedule_id` ASC) ,
+  CONSTRAINT `fk_shedule_user`
+  FOREIGN KEY (`shedule_id` )
+  REFERENCES `marius`.`shedule`(`schedule_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;

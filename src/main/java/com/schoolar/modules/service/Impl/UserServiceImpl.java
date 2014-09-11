@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service("userService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class UserServiceImpl extends BasicServiceImpl<User, Integer> implements UserService {
@@ -20,10 +22,20 @@ public class UserServiceImpl extends BasicServiceImpl<User, Integer> implements 
     public UserServiceImpl() {
     }
 
-    @Transactional(readOnly = false)
+
     @Override
+    @Transactional(readOnly = false)
     public void updateUser(User user) {
         userDao.updateUser(user);
     }
 
+    @Override
+    @Transactional(readOnly = false)
+    public void saveUser(User user) {
+        userDao.saveUser(user);
+    }
+
+    @Override
+    @Transactional
+    public List<User> getList() {return userDao.getList();}
 }

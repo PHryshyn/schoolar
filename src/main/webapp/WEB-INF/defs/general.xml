@@ -19,10 +19,12 @@
         <put-attribute name="current" value="login"/>
     </definition>
 
-    <definition name="admin" extends="common">
+
+
+    <definition name="listOfUser" extends="common">
         <put-attribute name="title" value="Schoolar" />
-        <put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
-        <put-attribute name="current" value="admin"/>
+        <put-attribute name="body" value="/WEB-INF/views/listOfUser.jsp" />
+
     </definition>
 
     <definition name="user-register" extends="common">

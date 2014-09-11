@@ -1,6 +1,7 @@
 package com.schoolar.modules.dao.Impl;
 
 import com.schoolar.modules.dao.UserDataDao;
+import com.schoolar.modules.model.User;
 import com.schoolar.modules.model.UserData;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
@@ -24,7 +25,6 @@ public class UserDataDaoImpl extends BasicCrudDaoImpl<UserData, Integer> impleme
         userDataToUpdate.setFullNamePar1(userData.getFullNamePar1());
         userDataToUpdate.setFullNamePar2(userData.getFullNamePar2());
         userData.setPhone(userData.getPhone());
-        userData.setUser(userData.getUser());
         update(userData);
     }
 
