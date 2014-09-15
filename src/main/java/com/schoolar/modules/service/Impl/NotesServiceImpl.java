@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service("notesService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class NotesServiceImpl extends BasicServiceImpl<Notes, Integer> implements NotesService {
+public class NotesServiceImpl implements NotesService {
 
     @Autowired
     @Qualifier(value = "notesDao")
@@ -29,4 +29,23 @@ public class NotesServiceImpl extends BasicServiceImpl<Notes, Integer> implement
         notesDao.updateNotes(notes);
     }
 
+    @Override
+    public void save(Notes notes) {
+        notesDao.save(notes);
+    }
+
+    @Override
+    public Notes findById(Integer noteId) {
+        return notesDao.findById(noteId);
+    }
+
+    @Override
+    public void delete(Integer noteId) {
+        notesDao.delete(noteId);
+    }
+
+    @Override
+    public List<Notes> getList() {
+        return notesDao.getList();
+    }
 }

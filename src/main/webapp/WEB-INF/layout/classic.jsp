@@ -41,27 +41,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="${current == 'home' ? 'active' : ''}"><a href='<spring:url value="/home"/>'>home</a></li>
-                    <li class="${current == 'login' ? 'active' : ''}"><a href='<spring:url value="/login"/>'>Login</a></li>
+                    <li class="${current == 'user-profile' ? 'active' : ''}"><a href='<spring:url value="/user/profile"/>'>Profile</a></li>
                     <li><a href="#">Link</a></li>
                     <li><a href="#">Link</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="<spring:url value="/admin"/>">Create user</a></li>
-                            <li><a href="<spring:url value="/shedule/create"/>">Create shedule</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                    <li class="${current == 'admin' ? 'active' : ''}"><a href='<spring:url value="/admin"/>'>Admin</a></li>
-                    <li class="${current == 'register' ? 'active' : ''}"><a href='<spring:url value="/register"/>'>Admin</a></li>
+
+                    <li class="${current == 'admin' ? 'active' : ''}"><a href='<spring:url value="/admin/disciplines"/>'>Discipline</a></li>
+                    <li class="${current == 'user-new' ? 'active' : ''}"><a href='<spring:url value="/admin/users"/>'>Create User</a></li>
+
                     <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->

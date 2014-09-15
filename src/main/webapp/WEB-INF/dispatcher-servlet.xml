@@ -12,7 +12,8 @@
   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
     <context:component-scan base-package="com.schoolar.modules" />
-<!--
+
+ <!--
 <bean
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
@@ -22,8 +23,8 @@
             <value>.jsp</value>
         </property>
     </bean>
-
 -->
+
 
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -37,13 +38,9 @@
                 <value>/WEB-INF/defs/general.xml</value>
             </list>
         </property>
-
-
     </bean>
 
 
-    <bean id="userDataDao" class="com.schoolar.modules.dao.Impl.UserDataDaoImpl"/>
-    <bean id="userDataService" class="com.schoolar.modules.service.Impl.UserDataServiceImpl"/>
     <bean id="userDao" class="com.schoolar.modules.dao.Impl.UserDaoImpl"/>
     <bean id="userService" class="com.schoolar.modules.service.Impl.UserServiceImpl"/>
     <bean id="disciplineDao" class="com.schoolar.modules.dao.Impl.DisciplineDaoImpl"/>

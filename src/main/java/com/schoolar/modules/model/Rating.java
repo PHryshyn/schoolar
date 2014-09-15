@@ -14,7 +14,7 @@ public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "rating_id")
-    private int ratingId;
+    private Integer ratingId;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "rating_date")
@@ -41,11 +41,11 @@ public class Rating {
         this.user = user;
     }
 
-    public int getRatingId() {
+    public Integer getRatingId() {
         return ratingId;
     }
 
-    public void setRatingId(int ratingId) {
+    public void setRatingId(Integer ratingId) {
         this.ratingId = ratingId;
     }
 

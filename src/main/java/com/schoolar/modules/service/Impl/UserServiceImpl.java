@@ -6,14 +6,12 @@ import com.schoolar.modules.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service("userService")
-@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class UserServiceImpl extends BasicServiceImpl<User, Integer> implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     @Qualifier(value = "userDao")
@@ -29,13 +27,29 @@ public class UserServiceImpl extends BasicServiceImpl<User, Integer> implements 
         userDao.updateUser(user);
     }
 
-    @Override
+
     @Transactional(readOnly = false)
-    public void saveUser(User user) {
-        userDao.saveUser(user);
+    @Override
+    public User saveUser(User user) {
+        return userDao.saveUser(user);
     }
 
-    @Override
+
     @Transactional
-    public List<User> getList() {return userDao.getList();}
+    @Override
+    public List<User> getList() {
+        return userDao.getList();
+    }
+
+    @Transactional
+    @Override
+    public List<User> getUserListByLastName() {
+        return userDao.getUserListByLastName();
+    }
+
+    @Transactional
+    @Override
+    public void delete(Integer id) {
+        userDao.delete(id);
+    }
 }

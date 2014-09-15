@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service("ratingService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class RatingServiceImpl extends BasicServiceImpl<Rating, Integer> implements RatingService {
+public class RatingServiceImpl implements RatingService {
 
     @Autowired
     @Qualifier(value = "ratingDao")

@@ -1,27 +1,26 @@
 package com.schoolar.modules.controller;
 
+import com.schoolar.modules.model.Discipline;
 import com.schoolar.modules.model.User;
-import com.schoolar.modules.service.*;
+import com.schoolar.modules.service.DisciplineService;
+import com.schoolar.modules.service.NotesService;
+import com.schoolar.modules.service.RatingService;
+import com.schoolar.modules.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 
-    @Autowired(required=false)
-    @Qualifier("userDataService")
-    private UserDataService userDataService;
 
     @Autowired
     @Qualifier(value = "userService")
@@ -40,91 +39,73 @@ public class AdminController {
     private RatingService ratingService;
 
 
-    @RequestMapping(value = "/save", method = RequestMethod.GET)
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public String addUser(Model model) {
+        model.addAttribute("user", new User());
+        model.addAttribute("userListByLastName", userService.getUserListByLastName());
+        return "user-new";
+    }
+
+    @RequestMapping(value = "/user/save**", method = RequestMethod.POST)
     public ModelAndView saveUser(@ModelAttribute("user") User user,
-                                  BindingResult result) {
+                                       BindingResult result) {
+        //  if (null == discipline.getDisciplineId()) {
         userService.saveUser(user);
-        return new ModelAndView("redirect:/admin/add");
+        // } else {
+        //    disciplineService.updateDiscipline(discipline);
+        //  }
+        return new ModelAndView("redirect:/admin/users");
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView listPupil() {
-        Map<String, Object> model = new HashMap<String, Object>();
-        model.put("user",  userService.getList());
+    @RequestMapping(value = "/user/delete/{id}")
+    public String deleteUser(@PathVariable("id") Integer id){
 
-        return new ModelAndView("listOfUser", model);
-    }
-
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public ModelAndView addUser(@ModelAttribute("user") User user,
-                                 BindingResult result) {
-
-        return new ModelAndView("user-register","user",new User());
-    }
-
-    @RequestMapping(value="/list")
-    public ModelAndView listOfUsers() {
-        ModelAndView modelAndView = new ModelAndView("list-of-teams");
-
-        List<User> userList = userService.getList();
-        modelAndView.addObject("user", userList);
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
-    public ModelAndView editTeamPage(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("edit-user-form");
-        User user = userService.findById(id);
-        modelAndView.addObject("user",user);
-        return modelAndView;
-    }
-
-    @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
-    public ModelAndView edditingUser(@ModelAttribute User user, @PathVariable Integer id) {
-
-        ModelAndView modelAndView = new ModelAndView("admin");
-
-        userService.updateUser(user);
-
-        String message = "User was successfully edited.";
-        modelAndView.addObject("message", message);
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
-    public ModelAndView deleteUser(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("admin");
         userService.delete(id);
-        String message = "User was successfully deleted.";
-        modelAndView.addObject("message", message);
-        return modelAndView;
+        return "redirect:/admin/users";
     }
 
 
-  /*@RequestMapping(value = "/register", method = RequestMethod.GET)
-  public ModelAndView createUser(@ModelAttribute("user") User user,
-                                 BindingResult result) {
 
-      return new ModelAndView("user-register");
-  }
+    //discipline
+    @RequestMapping(value = "/disciplines", method = RequestMethod.GET)
+    public String addDiscipline(Model model) {
+        model.addAttribute("discipline", new Discipline());
+        model.addAttribute("disciplineList", disciplineService.disciplineList());
+        return "discipline";
+    }
+
+    @RequestMapping(value = "/discipline/save**", method = RequestMethod.POST)
+    public ModelAndView saveDiscipline(@ModelAttribute("discipline") Discipline discipline,
+                                       BindingResult result) {
+      //  if (null == discipline.getDisciplineId()) {
+            disciplineService.save(discipline);
+       // } else {
+        //    disciplineService.updateDiscipline(discipline);
+      //  }
+        return new ModelAndView("redirect:/admin/disciplines");
+    }
+
+    @RequestMapping(value = "/discipline/delete/{disciplineId}")
+    public String removePerson(@PathVariable("disciplineId") Integer disciplineId){
+
+        disciplineService.delete(disciplineId);
+        return "redirect:/admin/disciplines";
+    }
 
 
-  @RequestMapping(value = "/create", method = RequestMethod.GET)
-  public ModelAndView saveUser( Model model, User user, BindingResult result) {
-      /*User existing = userService.findByUsername(user.getUsername());
-      if (existing != null) {
-          model.addAttribute("status", "exist");
-          return "myaccount";
-      }
-      userService.saveUser(user);
-      model.addAttribute("saved", "success");
-      return "myaccount";
+ /*   @RequestMapping(value= "/discipline/add", method = RequestMethod.POST)
+    public String addPerson(@ModelAttribute("discipline") Discipline discipline){
 
-      userService.save(user);
-      return new ModelAndView("redirect:/user-register");
-  }*/
+        if(discipline.getDisciplineId() == 0){
+            //new person, add it
+            disciplineService.save(discipline);
+        }else{
+            //existing person, call update
+            disciplineService.updateDiscipline(discipline);
+        }
 
+        return "redirect:/discipline";
 
+    }
+    */
 }

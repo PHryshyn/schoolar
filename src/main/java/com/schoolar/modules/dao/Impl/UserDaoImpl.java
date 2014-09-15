@@ -3,13 +3,14 @@ package com.schoolar.modules.dao.Impl;
 import com.schoolar.modules.dao.UserDao;
 import com.schoolar.modules.model.Role;
 import com.schoolar.modules.model.User;
-import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository("userDao")
 public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements UserDao {
+
 
     protected UserDaoImpl(){
         super(User.class);
@@ -31,10 +32,20 @@ public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements User
     }
 
     @Override
-    public void saveUser(User user){
+    public User saveUser(User user){
         user.setEnabled(1);
         user.setRole(Role.ROLE_USER);
+       // user.setShedule(user.getShedule());
         save(user);
+        return user;
     }
 
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<User> getUserListByLastName() {
+        List userList = (List<User>) getCurrentSession().createCriteria(User.class)
+                .addOrder( Order.asc("lastName") )
+                .list();
+        return userList;
+    }
 }

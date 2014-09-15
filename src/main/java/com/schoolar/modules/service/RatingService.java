@@ -5,7 +5,7 @@ import com.schoolar.modules.model.Rating;
 import java.util.List;
 
 
-public interface RatingService extends BasicService<Rating, Integer>{
+public interface RatingService{
 
     public void updateRating(Rating rating);
 

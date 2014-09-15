@@ -10,7 +10,7 @@ public class Notes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "notes_id")
-    private int noteId;
+    private Integer noteId;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "notes_date")
@@ -41,11 +41,11 @@ public class Notes {
         this.user = user;
     }
 
-    public int getNoteId() {
+    public Integer getNoteId() {
         return noteId;
     }
 
-    public void setNoteId(int noteId) {
+    public void setNoteId(Integer noteId) {
         this.noteId = noteId;
     }
 

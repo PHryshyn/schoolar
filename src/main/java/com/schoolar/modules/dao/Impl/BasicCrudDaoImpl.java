@@ -28,7 +28,7 @@ public class BasicCrudDaoImpl<E, I extends Serializable> implements BasicCrudDao
 
     @Override
     public void save(E e) {
-        getCurrentSession().saveOrUpdate(e);
+        getCurrentSession().save(e);
     }
 
     @Override
@@ -49,8 +49,9 @@ public class BasicCrudDaoImpl<E, I extends Serializable> implements BasicCrudDao
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<E> getList() {
-        return getCurrentSession().createCriteria(EntityClass.class).list();
+        return (List<E>) getCurrentSession().createCriteria(EntityClass.class).list();
     }
 
 

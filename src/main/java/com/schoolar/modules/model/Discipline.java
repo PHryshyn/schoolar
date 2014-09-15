@@ -10,7 +10,7 @@ public class Discipline {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "discipline_id")
-    private int disciplineId;
+    private Integer disciplineId;
 
 
     @Column(name = "discipline")
@@ -23,11 +23,11 @@ public class Discipline {
     public Discipline() {
     }
 
-    public int getDisciplineId() {
+    public Integer getDisciplineId() {
         return disciplineId;
     }
 
-    public void setDisciplineId(int disciplineId) {
+    public void setDisciplineId(Integer disciplineId) {
         this.disciplineId = disciplineId;
     }
 

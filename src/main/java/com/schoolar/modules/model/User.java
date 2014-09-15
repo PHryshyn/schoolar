@@ -16,15 +16,15 @@ public class User {
     @Column(name = "id")
     private Integer id;
 
-    @NotEmpty
+
     @Column(name = "username")
     private String username;
 
-    @NotEmpty
+
     @Column(name = "password")
     private String password;
 
-    @NotEmpty
+
     @Column(name = "enabled")
     private int enabled;
 
@@ -34,7 +34,7 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-    @Email
+
     @Column(name = "email")
     private String email;
 

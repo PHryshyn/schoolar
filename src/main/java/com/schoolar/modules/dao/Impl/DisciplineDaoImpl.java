@@ -21,4 +21,10 @@ public class DisciplineDaoImpl extends BasicCrudDaoImpl<Discipline, Integer> imp
         update(disciplineToUpdate);
     }
 
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Discipline> disciplineList() {
+      //  return  getCurrentSession().createCriteria(Discipline.class).list();
+      return (List<Discipline>)  getCurrentSession().createCriteria(Discipline.class).list();
+    }
 }
