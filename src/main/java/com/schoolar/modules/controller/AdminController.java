@@ -39,6 +39,7 @@ public class AdminController {
     private RatingService ratingService;
 
 
+    //user
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String addUser(Model model) {
         model.addAttribute("user", new User());
@@ -49,11 +50,11 @@ public class AdminController {
     @RequestMapping(value = "/user/save**", method = RequestMethod.POST)
     public ModelAndView saveUser(@ModelAttribute("user") User user,
                                        BindingResult result) {
-        //  if (null == discipline.getDisciplineId()) {
+          if (null == user.getId()) {
         userService.saveUser(user);
-        // } else {
-        //    disciplineService.updateDiscipline(discipline);
-        //  }
+          } else {
+        userService.updateUser(user);
+          }
         return new ModelAndView("redirect:/admin/users");
     }
 
@@ -64,7 +65,12 @@ public class AdminController {
         return "redirect:/admin/users";
     }
 
-
+    @RequestMapping("/user/edit/{id}")
+    public String editUser(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("user", userService.findById(id));
+        model.addAttribute("userListByLastName", userService.getUserListByLastName());
+        return "user-new";
+    }
 
     //discipline
     @RequestMapping(value = "/disciplines", method = RequestMethod.GET)
@@ -77,11 +83,11 @@ public class AdminController {
     @RequestMapping(value = "/discipline/save**", method = RequestMethod.POST)
     public ModelAndView saveDiscipline(@ModelAttribute("discipline") Discipline discipline,
                                        BindingResult result) {
-      //  if (null == discipline.getDisciplineId()) {
+        if (null == discipline.getDisciplineId()) {
             disciplineService.save(discipline);
-       // } else {
-        //    disciplineService.updateDiscipline(discipline);
-      //  }
+        } else {
+           disciplineService.updateDiscipline(discipline);
+        }
         return new ModelAndView("redirect:/admin/disciplines");
     }
 
@@ -92,6 +98,12 @@ public class AdminController {
         return "redirect:/admin/disciplines";
     }
 
+    @RequestMapping("/discipline/edit/{disciplineId}")
+    public String editDiscipline(@PathVariable("disciplineId") Integer disciplineId, Model model) {
+        model.addAttribute("discipline", disciplineService.findById(disciplineId));
+        model.addAttribute("disciplineList", disciplineService.disciplineList());
+        return "discipline";
+    }
 
  /*   @RequestMapping(value= "/discipline/add", method = RequestMethod.POST)
     public String addPerson(@ModelAttribute("discipline") Discipline discipline){

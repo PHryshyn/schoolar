@@ -44,4 +44,10 @@ public class DisciplineServiceImpl  implements DisciplineService {
     public void delete(Integer disciplineId) {
         disciplineDao.delete(disciplineId);
     }
+
+    @Transactional
+    @Override
+    public Discipline findById(Integer disciplineId) {
+        return disciplineDao.findById(disciplineId);
+    }
 }

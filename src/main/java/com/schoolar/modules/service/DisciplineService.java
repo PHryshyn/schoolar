@@ -11,4 +11,5 @@ public interface DisciplineService {
     List<Discipline> disciplineList();
     void save(Discipline discipline);
     void delete(Integer disciplineId);
+    Discipline findById(Integer disciplineId);
 }

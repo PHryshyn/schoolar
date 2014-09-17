@@ -9,6 +9,16 @@
 <div>
     <form:form cssClass="form-horizontal" modelAttribute="user" action="${pageContext.request.contextPath}/admin/user/save">
 
+        <c:if test="${!empty user.id}" >
+            <div class="form-group" >
+                <label class="col-sm-2 control-label">Discipline:</label>
+                <div class="col-sm-10">
+                    <form:input path="id" class="form-control" />
+                    <form:hidden path="id" />
+                </div>
+            </div>
+        </c:if>
+
         <div class="form-group" >
             <label class="col-sm-2 control-label">Username:</label>
             <div class="col-sm-10">
@@ -37,14 +47,24 @@
             </div>
         </div>
 
+        <c:if test="${empty user.id}" >
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" value="Create User" class="btn btn-primary "/>
             </div>
         </div>
+        </c:if>
+
+        <c:if test="${!empty user.id}" >
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Edit User" class="btn btn-primary "/>
+                </div>
+            </div>
+        </c:if>
 
         <c:if test="${!empty userListByLastName}">
-            <table>
+            <table class="table table-bordered">
                 <h2>List of Users</h2>
                 <tr>
                     <th>ID</th>
@@ -63,6 +83,7 @@
                         <td><c:out value="${user.username}"/></td>
                         <td><c:out value="${user.email}"/></td>
                         <td><a href="<spring:url value='${pageContext.request.contextPath}/admin/user/delete/${user.id}' />" >Delete</a></td>
+                        <td><a href="<spring:url value='${pageContext.request.contextPath}/admin/user/edit/${user.id}' />" >Edit</a></td>
                     </tr>
                 </c:forEach>
             </table>

@@ -8,7 +8,7 @@
 
 
 <h3>${msg}</h3>
-<h3>Welcome ${user}</h3>
+<h3>Welcome ${user} ${id}</h3>
 
 <a href="<c:url value="/j_spring_security_logout" />" >  Logout</a>
 

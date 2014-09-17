@@ -4,6 +4,7 @@ import com.schoolar.modules.dao.UserDao;
 import com.schoolar.modules.model.Role;
 import com.schoolar.modules.model.User;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -44,8 +45,16 @@ public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements User
     @SuppressWarnings("unchecked")
     public List<User> getUserListByLastName() {
         List userList = (List<User>) getCurrentSession().createCriteria(User.class)
-                .addOrder( Order.asc("lastName") )
+                .add( Restrictions.like("role", Role.ROLE_USER) )
+                .addOrder(Order.asc("lastName"))
                 .list();
         return userList;
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        return (User)getCurrentSession().get(User.class, username);
+      //  return findById(user.getId());
+        //return (User) getCurrentSession().get(User.class, username);
     }
 }
