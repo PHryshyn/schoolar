@@ -1,87 +1,70 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 
-<div>
-    <legend>Change profile</legend>
-    <form:form cssClass="form-horizontal" modelAttribute="user" action="${pageContext.request.contextPath}/user/profile/update">
+<form:form class="form-horizontal" modelAttribute="user" method="get" action="${pageContext.request.contextPath}/user/profile/edit/${user.id}">
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">ID:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.id}</p>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">Username:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.username}</p>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">First name:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.firstName}</p>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">Last name:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.lastName}</p>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">Email:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.email}</p>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">Adress:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.adress}</p>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">Phone:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.phone}</p>
+        </div>
+    </div>
 
     <div class="form-group" >
-            <label class="col-sm-2 control-label">First Name:</label>
-            <div class="col-sm-10">
-                <form:input path="firstName" id="firstName" class="form-control" placeholder="First name"/>
-            </div>
+        <label class="col-sm-2 control-label">Parent 1:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.fullNamePar1}</p>
         </div>
-
-        <div class="form-group" >
-            <label class="col-sm-2 control-label">Last Name:</label>
-            <div class="col-sm-10">
-                <form:input path="lastName" id="lastName" class="form-control" placeholder="Last Name"/>
-            </div>
+    </div>
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">Parent 2:</label>
+        <div class="col-sm-15">
+            <p class="form-control-static">${user.fullNamePar2}</p>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="lastName" class="col-sm-2 control-label">password</label>
-            <div class="col-sm-10">
-                <form:input path="lastName" id="lastName" class="form-control" placeholder="password"/>
-
-            </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" value="Edit profile" class="btn btn-primary "/>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="email" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-                <form:input path="email" id="email" class="form-control" placeholder="Email"/>
+</form:form>
 
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="adress" class="col-sm-2 control-label">Adress:</label>
-            <div class="col-sm-10">
-                <form:input path="adress" id="adress" class="form-control" placeholder="adress"/>
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fullNamePar1" class="col-sm-2 control-label">Full Name Parent 1</label>
-            <div class="col-sm-10">
-                <form:input path="fullNamePar1" id="fullNamePar1" class="form-control" placeholder="Full Name Parent 1"/>
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="fullNamePar2" class="col-sm-2 control-label">Full Name Parent 2</label>
-            <div class="col-sm-10">
-                <form:input path="fullNamePar2" id="fullNamePar2" class="form-control" placeholder="Full Name Parent 2"/>
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="phone" class="col-sm-2 control-label">Phone:</label>
-            <div class="col-sm-10">
-                <form:input path="phone" id="phone" class="form-control" placeholder="phone"/>
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" value="Update profile" class="btn btn-primary "/>
-            </div>
-        </div>
-
-        <security:authentication property="principal" var="user" />
-        ${user.id}
-        ${user.username}
-            
-
-    </form:form>
-
-</div>
 
