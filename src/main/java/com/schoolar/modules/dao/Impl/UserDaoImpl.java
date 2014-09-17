@@ -3,6 +3,7 @@ package com.schoolar.modules.dao.Impl;
 import com.schoolar.modules.dao.UserDao;
 import com.schoolar.modules.model.Role;
 import com.schoolar.modules.model.User;
+import org.hibernate.Query;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -53,8 +54,9 @@ public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements User
 
     @Override
     public User findByUsername(String username) {
-        return (User)getCurrentSession().get(User.class, username);
-      //  return findById(user.getId());
-        //return (User) getCurrentSession().get(User.class, username);
+        Query query = getCurrentSession().createQuery("FROM User WHERE username = :username");
+        query.setParameter("username", username);
+
+        return (User) query.uniqueResult();
     }
 }
