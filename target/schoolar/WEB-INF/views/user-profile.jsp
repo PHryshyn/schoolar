@@ -1,16 +1,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 
 <div>
     <legend>Change profile</legend>
-    <form:form cssClass="form-horizontal" modelAttribute="user" action="${pageContext.request.contextPath}/admin/profile/save">
+    <form:form cssClass="form-horizontal" modelAttribute="user" action="${pageContext.request.contextPath}/user/profile/update">
 
     <div class="form-group" >
             <label class="col-sm-2 control-label">First Name:</label>
             <div class="col-sm-10">
-                <form:input path="firstName" id="firstName" class="form-control" placeholder="First Name"/>
+                <form:input path="firstName" id="firstName" class="form-control" placeholder="First name"/>
             </div>
         </div>
 
@@ -74,6 +75,12 @@
                 <input type="submit" value="Update profile" class="btn btn-primary "/>
             </div>
         </div>
+
+        <security:authentication property="principal" var="user" />
+        ${user.id}
+        ${user.username}
+            
+
     </form:form>
 
 </div>

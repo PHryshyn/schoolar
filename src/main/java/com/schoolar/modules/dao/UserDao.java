@@ -10,5 +10,6 @@ public interface UserDao extends BasicCrudDao<User, Integer> {
     User saveUser(User user);
     List<User> getUserListByLastName();
     User findByUsername(String username);
+    //User getProfile(String username);
 
 }

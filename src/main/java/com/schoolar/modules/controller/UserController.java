@@ -10,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 
@@ -35,17 +38,31 @@ public class UserController {
     @Qualifier(value = "ratingService")
     private RatingService ratingService;
 
-    @RequestMapping(value = "/profile/{id}", method = RequestMethod.GET)
-    public String profile(Model model, Principal principal) {
+    @RequestMapping(value = "/profiles", method = RequestMethod.GET)
+    public String addDiscipline(Model model) {
+        model.addAttribute("user", new User());
+        model.addAttribute("userProfile", userService.getUserListByLastName());
+        return "user-profile";
+    }
+
+    @RequestMapping(value = "/profile/update**", method = RequestMethod.POST)
+    public ModelAndView saveDiscipline(@ModelAttribute("user") User user,
+                                       BindingResult result) {
+        userService.updateUser(user);
+
+        return new ModelAndView("redirect:/user/profiles");
+    }
+   // @RequestMapping(value = "/profile/", method = RequestMethod.GET)
+    //public String profile(Model model, Principal principal) {
        // String username = principal.getName();
       //  model.addAttribute("user", userService.findByUsername(username));
    //     User user = userService.findByUsername(username);
      //   Integer id = user.getId();
       //  model.addAttribute("id", userService.findById(id));
-        model.addAttribute("user", new User());
+   //     model.addAttribute("user", new User());
         //  model.addAttribute("listDiscipline", disciplineService.disciplineList());
-        return "user-profile";
-    }
+    //    return "user-profile";
+   // }
 
 
 }
