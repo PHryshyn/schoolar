@@ -6,39 +6,39 @@
 
 
 <div>
-<form:form cssClass="form-horizontal" modelAttribute="notes" action="${pageContext.request.contextPath}/admin/notes/save">
+<form:form cssClass="form-horizontal" modelAttribute="homework" action="${pageContext.request.contextPath}/admin/homework/save">
 
     <div class="form-group" >
-        <label class="col-sm-2 control-label">Note ID:</label>
-        <div class="col-sm-10">
-            <form:input path="noteId" class="form-control" placeholder="Note ID"/>
+        <label class="col-sm-3 control-label">ID:</label>
+        <div class="col-sm-8">
+            <form:input path="homeworkId" class="form-control" placeholder="Homework ID"/>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label">Date:</label>
-        <div class="col-sm-10">
-            <form:input path="noteDate" class="form-control" placeholder="noteDate"/>
+        <label class="col-sm-3 control-label">Date (mm.dd.yyyy):</label>
+        <div class="col-sm-8">
+            <form:input path="homeworkDate" class="form-control" placeholder="homeworkDate"/>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label">Homework:</label>
-        <div class="col-sm-10">
+        <label class="col-sm-3 control-label">Homework:</label>
+        <div class="col-sm-8">
             <form:input path="homework" class="form-control" placeholder="homework"/>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label">Notes:</label>
-        <div class="col-sm-10">
-            <form:input path="notes" class="form-control" placeholder="notes"/>
+        <label class="col-sm-3 control-label">Discipline:</label>
+        <div class="col-sm-8">
+            <form:input path="discipline" class="form-control" placeholder="discipline"/>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <input type="submit" value="Add Discipline" class="btn btn-primary "/>
+            <input type="submit" value="Add Homework" class="btn btn-primary "/>
         </div>
     </div>
 

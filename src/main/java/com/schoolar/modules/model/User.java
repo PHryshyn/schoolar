@@ -1,11 +1,6 @@
 package com.schoolar.modules.model;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -24,10 +19,10 @@ public class User {
     @Column(name = "password")
     private String password;
 
-
+/*
     @Column(name = "enabled")
     private int enabled;
-
+*/
     @Column(name = "first_name")
     private String firstName;
 
@@ -50,20 +45,20 @@ public class User {
     @Column(name = "phone")
     private Integer phone;
 
+    /*
     @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private Shedule shedule;
-
+*/
     @Enumerated(EnumType.STRING)
     private Role role;
 
     public User() {
     }
 
-    public User(String username, String password, int enabled, String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone, Shedule shedule, Role role) {
+    public User(String username, String password, String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone, Role role) {
         this.username = username;
         this.password = password;
-        this.enabled = enabled;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -71,10 +66,39 @@ public class User {
         this.fullNamePar1 = fullNamePar1;
         this.fullNamePar2 = fullNamePar2;
         this.phone = phone;
-        this.shedule = shedule;
         this.role = role;
     }
 
+    /*   public User(String username, String password, int enabled, String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone, Role role) {
+            this.username = username;
+            this.password = password;
+            this.enabled = enabled;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.adress = adress;
+            this.fullNamePar1 = fullNamePar1;
+            this.fullNamePar2 = fullNamePar2;
+            this.phone = phone;
+            this.role = role;
+        }
+    */
+    /*
+        public User(String username, String password, int enabled, String firstName, String lastName, String email, String adress, String fullNamePar1, String fullNamePar2, Integer phone, Shedule shedule, Role role) {
+            this.username = username;
+            this.password = password;
+            this.enabled = enabled;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.adress = adress;
+            this.fullNamePar1 = fullNamePar1;
+            this.fullNamePar2 = fullNamePar2;
+            this.phone = phone;
+            this.shedule = shedule;
+            this.role = role;
+        }
+    */
     public Integer getId() {
         return id;
     }
@@ -99,14 +123,14 @@ public class User {
         this.password = password;
     }
 
-    public int getEnabled() {
+ /*   public int getEnabled() {
         return enabled;
     }
 
     public void setEnabled(int enabled) {
         this.enabled = enabled;
     }
-
+*/
     public String getFirstName() {
         return firstName;
     }
@@ -162,7 +186,7 @@ public class User {
     public void setPhone(Integer phone) {
         this.phone = phone;
     }
-
+/*
     public Shedule getShedule() {
         return shedule;
     }
@@ -170,7 +194,7 @@ public class User {
     public void setShedule(Shedule shedule) {
         this.shedule = shedule;
     }
-
+*/
     public Role getRole() {
         return role;
     }

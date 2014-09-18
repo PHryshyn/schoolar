@@ -44,15 +44,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="${current == 'home' ? 'active' : ''}"><a href='<spring:url value="/home"/>'>home</a></li>
                     <li class="${current == 'user-profile' ? 'active' : ''}"><a href='<spring:url value="/user/profile"/>'>Profile</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li class="${current == 'homework' ? 'active' : ''}"><a href='<spring:url value="/user/homeworks "/>'>Homework</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-
-
                     <li class="${current == 'admin' ? 'active' : ''}"><a href='<spring:url value="/admin/disciplines"/>'>Discipline</a></li>
                     <li class="${current == 'user-new' ? 'active' : ''}"><a href='<spring:url value="/admin/users"/>'>Create User</a></li>
 

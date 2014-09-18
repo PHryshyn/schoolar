@@ -51,7 +51,11 @@
         <put-attribute name="current" value="edit-user-profile"/>
     </definition>
 
-
+    <definition name="homework" extends="common">
+        <put-attribute name="title" value="Edit User Profile" />
+        <put-attribute name="body" value="/WEB-INF/views/homework.jsp" />
+        <put-attribute name="current" value="homework"/>
+    </definition>
 
 
 

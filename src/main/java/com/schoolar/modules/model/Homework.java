@@ -4,35 +4,42 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "notes")
-public class Notes {
+@Table(name = "homework")
+public class Homework {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "notes_id")
-    private Integer noteId;
+    @Column(name = "homework_id")
+    private Integer homeworkId;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "notes_date")
-    private Date noteDate;
+    @Column(name = "homework_date")
+    private Date homeworkDate;
 
     @Column(name = "homework")
     private String homework;
-
+/*
     @Column(name = "notes")
     private String notes;
-
+*/
     @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private Discipline discipline;
-
+/*
     @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private User user;
-
-    public Notes() {
+*/
+    public Homework() {
     }
 
+    public Homework(Date homeworkDate, String homework, Discipline discipline) {
+        this.homeworkDate = homeworkDate;
+        this.homework = homework;
+        this.discipline = discipline;
+    }
+
+    /*
     public Notes(Date noteDate, String homework, String notes, Discipline discipline, User user) {
         this.noteDate = noteDate;
         this.homework = homework;
@@ -40,21 +47,22 @@ public class Notes {
         this.discipline = discipline;
         this.user = user;
     }
+*/
 
-    public Integer getNoteId() {
-        return noteId;
+    public Integer getHomeworkId() {
+        return homeworkId;
     }
 
-    public void setNoteId(Integer noteId) {
-        this.noteId = noteId;
+    public void setHomeworkId(Integer homeworkId) {
+        this.homeworkId = homeworkId;
     }
 
-    public Date getNoteDate() {
-        return noteDate;
+    public Date getHomeworkDate() {
+        return homeworkDate;
     }
 
-    public void setNoteDate(Date noteDate) {
-        this.noteDate = noteDate;
+    public void setHomeworkDate(Date homeworkDate) {
+        this.homeworkDate = homeworkDate;
     }
 
     public String getHomework() {
@@ -65,27 +73,11 @@ public class Notes {
         this.homework = homework;
     }
 
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
     public Discipline getDiscipline() {
         return discipline;
     }
 
     public void setDiscipline(Discipline discipline) {
         this.discipline = discipline;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

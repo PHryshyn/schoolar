@@ -35,7 +35,7 @@ public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements User
 
     @Override
     public User saveUser(User user){
-        user.setEnabled(1);
+        //user.setEnabled(1);
         user.setRole(Role.ROLE_USER);
        // user.setShedule(user.getShedule());
         save(user);

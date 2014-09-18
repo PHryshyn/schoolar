@@ -3,7 +3,7 @@ package com.schoolar.modules.controller;
 import com.schoolar.modules.model.Discipline;
 import com.schoolar.modules.model.User;
 import com.schoolar.modules.service.DisciplineService;
-import com.schoolar.modules.service.NotesService;
+import com.schoolar.modules.service.HomeworkService;
 import com.schoolar.modules.service.RatingService;
 import com.schoolar.modules.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +31,8 @@ public class AdminController {
     private DisciplineService disciplineService;
 
     @Autowired
-    @Qualifier(value = "notesService")
-    private NotesService notesService;
+    @Qualifier(value = "homeworkService")
+    private HomeworkService homeworkService;
 
     @Autowired
     @Qualifier(value = "ratingService")
@@ -105,19 +105,5 @@ public class AdminController {
         return "discipline";
     }
 
- /*   @RequestMapping(value= "/discipline/add", method = RequestMethod.POST)
-    public String addPerson(@ModelAttribute("discipline") Discipline discipline){
 
-        if(discipline.getDisciplineId() == 0){
-            //new person, add it
-            disciplineService.save(discipline);
-        }else{
-            //existing person, call update
-            disciplineService.updateDiscipline(discipline);
-        }
-
-        return "redirect:/discipline";
-
-    }
-    */
 }

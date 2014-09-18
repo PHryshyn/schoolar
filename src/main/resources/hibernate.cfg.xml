@@ -13,7 +13,7 @@
 
         <mapping class="com.schoolar.modules.model.User"/>
         <mapping class="com.schoolar.modules.model.Discipline"/>
-        <mapping class="com.schoolar.modules.model.Notes"/>
+        <mapping class="com.schoolar.modules.model.Homework"/>
         <mapping class="com.schoolar.modules.model.Role"/>
         <mapping class="com.schoolar.modules.model.Rating"/>
         <mapping class="com.schoolar.modules.model.Shedule"/>

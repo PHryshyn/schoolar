@@ -45,8 +45,8 @@
     <bean id="userService" class="com.schoolar.modules.service.Impl.UserServiceImpl"/>
     <bean id="disciplineDao" class="com.schoolar.modules.dao.Impl.DisciplineDaoImpl"/>
     <bean id="disciplineService" class="com.schoolar.modules.service.Impl.DisciplineServiceImpl"/>
-    <bean id="notesDao" class="com.schoolar.modules.dao.Impl.NotesDaoImpl"/>
-    <bean id="notesService" class="com.schoolar.modules.service.Impl.NotesServiceImpl"/>
+    <bean id="homeworkDao" class="com.schoolar.modules.dao.Impl.HomeworkDaoImpl"/>
+    <bean id="homeworkService" class="com.schoolar.modules.service.Impl.HomeworkServiceImpl"/>
     <bean id="ratingDao" class="com.schoolar.modules.dao.Impl.RatingDaoImpl"/>
     <bean id="ratingService" class="com.schoolar.modules.service.Impl.RatingServiceImpl"/>
    <!-- <bean id="basicCrudDao" class="com.schoolar.modules.dao.Impl.BasicCrudDaoImpl"/> -->

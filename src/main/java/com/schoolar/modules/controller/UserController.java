@@ -1,9 +1,10 @@
 package com.schoolar.modules.controller;
 
 
+import com.schoolar.modules.model.Homework;
 import com.schoolar.modules.model.User;
 import com.schoolar.modules.service.DisciplineService;
-import com.schoolar.modules.service.NotesService;
+import com.schoolar.modules.service.HomeworkService;
 import com.schoolar.modules.service.RatingService;
 import com.schoolar.modules.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class UserController {
     private DisciplineService disciplineService;
 
     @Autowired
-    @Qualifier(value = "notesService")
-    private NotesService notesService;
+    @Qualifier(value = "homeworkService")
+    private HomeworkService homeworkService;
 
     @Autowired
     @Qualifier(value = "ratingService")
@@ -54,6 +55,15 @@ public class UserController {
         model.addAttribute("user", userService.findById(id));
         userService.updateUser(user);
         return "redirect:/user/profile";
+    }
+
+    //homework
+    //homework
+    @RequestMapping(value = "/homeworks", method = RequestMethod.GET)
+    public String Homework(Model model) {
+        model.addAttribute("homework", new Homework());
+       // model.addAttribute("disciplineList", disciplineService.disciplineList());
+        return "homework";
     }
 
   /*  @RequestMapping(value = "/profile/update/**", method = RequestMethod.POST)
