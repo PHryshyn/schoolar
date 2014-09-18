@@ -6,7 +6,14 @@
 
 <div>
     <legend>Change profile</legend>
-    <form:form cssClass="form-horizontal" modelAttribute="user" action="${pageContext.request.contextPath}/user/profile/update">
+    <form:form cssClass="form-horizontal" modelAttribute="user" action="${pageContext.request.contextPath}/user/profile/update/${user.id}">
+
+        <div class="form-group" >
+            <label class="col-sm-2 control-label">Username:</label>
+            <div class="col-sm-10">
+                <form:input path="username" id="username" class="form-control" placeholder="username"/>
+            </div>
+        </div>
 
         <div class="form-group" >
             <label class="col-sm-2 control-label">First Name:</label>
@@ -23,9 +30,9 @@
         </div>
 
         <div class="form-group">
-            <label for="lastName" class="col-sm-2 control-label">password</label>
+            <label for="password" class="col-sm-2 control-label">password</label>
             <div class="col-sm-10">
-                <form:input path="lastName" id="lastName" class="form-control" placeholder="password"/>
+                <form:password path="password" id="password" class="form-control" placeholder="password"/>
 
             </div>
         </div>
@@ -75,10 +82,6 @@
                 <input type="submit" value="Update profile" class="btn btn-primary "/>
             </div>
         </div>
-
-        <security:authentication property="principal" var="user" />
-        ${user.id}
-        ${user.username}
 
 
     </form:form>

@@ -1,6 +1,7 @@
 package com.schoolar.modules.controller;
 
 
+import com.schoolar.modules.model.User;
 import com.schoolar.modules.service.DisciplineService;
 import com.schoolar.modules.service.NotesService;
 import com.schoolar.modules.service.RatingService;
@@ -9,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
 
@@ -33,12 +36,35 @@ public class UserController {
     @Qualifier(value = "ratingService")
     private RatingService ratingService;
 
-    @RequestMapping(value = "/profiles")
+    @RequestMapping(value = "/profile")
     public String account(Model model, Principal principal){
         String username = principal.getName();
         model.addAttribute("user", userService.findByUsername(username));
         return "user-profile";
     }
+
+    @RequestMapping(value = "/profile/edit/{id}", method = RequestMethod.GET)
+    public String editProfile(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("user", userService.findById(id));
+        return "edit-user-profile";
+    }
+
+    @RequestMapping(value = "/profile/update/{id}", method = RequestMethod.POST)
+    public String updateProfile(@PathVariable("id") Integer id, User user, Model model) {
+        model.addAttribute("user", userService.findById(id));
+        userService.updateUser(user);
+        return "redirect:/user/profile";
+    }
+
+  /*  @RequestMapping(value = "/profile/update/**", method = RequestMethod.POST)
+    public ModelAndView updateProfile(@ModelAttribute("user") User user,
+                                 BindingResult result) {
+
+        userService.updateUser(user);
+
+        return new ModelAndView("redirect:/user/profile");
+    }
+
  /*   @RequestMapping(value = "/profiles", method = RequestMethod.GET)
     public String addDiscipline(Model model) {
         model.addAttribute("user", new User());
