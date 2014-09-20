@@ -1,5 +1,7 @@
 package com.schoolar.modules.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,6 +15,7 @@ public class Homework {
     private Integer homeworkId;
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "homework_date")
     private Date homeworkDate;
 
@@ -22,8 +25,8 @@ public class Homework {
     @Column(name = "notes")
     private String notes;
 */
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
+    @OneToOne//(fetch = FetchType.LAZY)
+    @JoinColumn(name = "discipline_id")
     private Discipline discipline;
 /*
     @OneToOne(fetch = FetchType.LAZY)

@@ -1,10 +1,8 @@
 package com.schoolar.modules.model;
 
-import org.hibernate.annotations.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
@@ -17,18 +15,19 @@ public class Rating {
     private Integer ratingId;
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "rating_date")
     private Date ratingDate;
 
     @Column(name = "rating")
     private Integer rating;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
+    @OneToOne
+    @JoinColumn(name = "discipline_id")
     private Discipline discipline;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
+    @OneToOne
+    @JoinColumn(name = "id")
     private User user;
 
     public Rating() {

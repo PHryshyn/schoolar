@@ -27,11 +27,11 @@ DROP TABLE IF EXISTS `marius`.`shedule` ;
 
 CREATE TABLE IF NOT EXISTS `marius`.`shedule` (
   `shedule_id` INT NOT NULL,
-  `discipline_discipline_id` INT NOT NULL,
+  `discipline_id` INT NOT NULL,
   PRIMARY KEY (`shedule_id`),
-  INDEX `fk_shedule_discipline_idx` (`discipline_discipline_id` ASC),
+  INDEX `fk_shedule_discipline_idx` (`discipline_id` ASC),
   CONSTRAINT `fk_shedule_discipline`
-  FOREIGN KEY (`discipline_discipline_id`)
+  FOREIGN KEY (`discipline_id`)
   REFERENCES `marius`.`discipline` (`discipline_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -68,11 +68,11 @@ CREATE TABLE IF NOT EXISTS `marius`.`homework` (
   `homework_id` INT NOT NULL AUTO_INCREMENT,
   `homework` VARCHAR(45) NULL,
   `homework_date` DATE NULL,
-  `discipline_discipline_id` INT NOT NULL,
+  `discipline_id` INT NOT NULL,
   PRIMARY KEY (`homework_id`),
-  INDEX `fk_homework_discipline1_idx` (`discipline_discipline_id` ASC),
+  INDEX `fk_homework_discipline1_idx` (`discipline_id` ASC),
   CONSTRAINT `fk_homework_discipline1`
-  FOREIGN KEY (`discipline_discipline_id`)
+  FOREIGN KEY (`discipline_id`)
   REFERENCES `marius`.`discipline` (`discipline_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -89,17 +89,17 @@ CREATE TABLE IF NOT EXISTS `marius`.`rating` (
   `rating_date` DATE NULL,
   `rating` INT NULL,
   `user_id` INT NOT NULL,
-  `discipline_discipline_id` INT NOT NULL,
+  `discipline_id` INT NOT NULL,
   PRIMARY KEY (`rating_id`),
   INDEX `fk_rating_user1_idx` (`user_id` ASC),
-  INDEX `fk_rating_discipline1_idx` (`discipline_discipline_id` ASC),
+  INDEX `fk_rating_discipline1_idx` (`discipline_id` ASC),
   CONSTRAINT `fk_rating_user1`
   FOREIGN KEY (`user_id`)
   REFERENCES `marius`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_rating_discipline1`
-  FOREIGN KEY (`discipline_discipline_id`)
+  FOREIGN KEY (`discipline_id`)
   REFERENCES `marius`.`discipline` (`discipline_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

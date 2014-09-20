@@ -12,5 +12,8 @@ public interface HomeworkService {
     Homework findById(Integer homeworkId);
     void delete(Integer homeworkId);
     List<Homework> getList();
+    public void saveHomework(Homework homework);
+    List<Homework> getHomeworkListByDate();
+    List<Homework> getHomeworkListByDiscipline();
 
 }

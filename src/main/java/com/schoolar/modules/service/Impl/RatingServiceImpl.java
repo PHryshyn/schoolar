@@ -23,8 +23,33 @@ public class RatingServiceImpl implements RatingService {
     public RatingServiceImpl() {
     }
 
+    @Transactional(readOnly = false)
     @Override
     public void updateRating(Rating rating) {
         ratingDao.updateRating(rating);
+    }
+
+    @Transactional(readOnly = false)
+    @Override
+    public void saveRating(Rating rating) {
+        ratingDao.saveRating(rating);
+    }
+
+    @Transactional
+    @Override
+    public List<Rating> getRatingListByDate() {
+        return ratingDao.getRatingListByDate();
+    }
+
+    @Transactional
+    @Override
+    public Rating findById(Integer ratingId) {
+        return ratingDao.findById(ratingId);
+    }
+
+    @Transactional(readOnly = false)
+    @Override
+    public void delete(Integer ratingId) {
+        ratingDao.delete(ratingId);
     }
 }

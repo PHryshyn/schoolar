@@ -14,7 +14,7 @@ public class Shedule {
     private Integer sheduleId;
 
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany
     private Set<Discipline> disciplines = new HashSet<Discipline>(0);
 
     public Shedule() {

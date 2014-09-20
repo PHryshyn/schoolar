@@ -7,6 +7,6 @@ import java.util.List;
 public interface DisciplineDao extends BasicCrudDao<Discipline, Integer> {
 
     void updateDiscipline(Discipline discipline);
-    List disciplineList();
+    List<Discipline> disciplineList();
 
 }

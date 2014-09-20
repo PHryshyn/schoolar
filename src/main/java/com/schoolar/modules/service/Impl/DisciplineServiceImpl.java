@@ -50,4 +50,10 @@ public class DisciplineServiceImpl  implements DisciplineService {
     public Discipline findById(Integer disciplineId) {
         return disciplineDao.findById(disciplineId);
     }
+
+    @Transactional
+    @Override
+    public List<Discipline> getList() {
+        return disciplineDao.getList();
+    }
 }

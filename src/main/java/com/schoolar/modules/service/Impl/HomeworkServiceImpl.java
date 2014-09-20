@@ -30,22 +30,46 @@ public class HomeworkServiceImpl implements HomeworkService {
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void save(Homework homework) {
         homeworkDao.save(homework);
     }
 
     @Override
+    @Transactional
     public Homework findById(Integer homeworkId) {
         return homeworkDao.findById(homeworkId);
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void delete(Integer homeworkId) {
         homeworkDao.delete(homeworkId);
     }
 
     @Override
+    @Transactional
     public List<Homework> getList() {
         return homeworkDao.getList();
+    }
+
+    @Override
+    @Transactional(readOnly = false)
+    public void saveHomework(Homework homework) {
+        homeworkDao.saveHomework(homework);
+    }
+
+
+
+    @Transactional
+    @Override
+    public List<Homework> getHomeworkListByDate() {
+        return homeworkDao.getHomeworkListByDate();
+    }
+
+    @Transactional
+    @Override
+    public List<Homework> getHomeworkListByDiscipline() {
+        return homeworkDao.getHomeworkListByDiscipline();
     }
 }

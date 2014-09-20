@@ -1,6 +1,8 @@
 package com.schoolar.modules.controller;
 
 import com.schoolar.modules.model.Discipline;
+import com.schoolar.modules.model.Homework;
+import com.schoolar.modules.model.Rating;
 import com.schoolar.modules.model.User;
 import com.schoolar.modules.service.DisciplineService;
 import com.schoolar.modules.service.HomeworkService;
@@ -92,7 +94,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/discipline/delete/{disciplineId}")
-    public String removePerson(@PathVariable("disciplineId") Integer disciplineId){
+    public String deleteDiscipline(@PathVariable("disciplineId") Integer disciplineId){
 
         disciplineService.delete(disciplineId);
         return "redirect:/admin/disciplines";
@@ -105,5 +107,75 @@ public class AdminController {
         return "discipline";
     }
 
+    //homework
+    @RequestMapping(value = "/homeworks", method = RequestMethod.GET)
+    public String addHomework(Model model) {
+        model.addAttribute("homework", new Homework());
+        model.addAttribute("disciplineList", disciplineService.disciplineList());
+        model.addAttribute("homeworkList", homeworkService.getHomeworkListByDate());
+        return "homework";
+    }
 
+    @RequestMapping(value = "/homework/save**", method = RequestMethod.POST)
+    public ModelAndView saveHomework(@ModelAttribute("homework") Homework homework,
+                                       BindingResult result) {
+        if (null == homework.getHomeworkId()) {
+            homeworkService.saveHomework(homework);
+        } else {
+            homeworkService.updateHomework(homework);
+        }
+        return new ModelAndView("redirect:/admin/homeworks");
+    }
+
+    @RequestMapping(value = "/homework/delete/{homeworkId}")
+    public String deleteHomework(@PathVariable("homeworkId") Integer homeworkId){
+
+        homeworkService.delete(homeworkId);
+        return "redirect:/admin/homeworks";
+    }
+
+    @RequestMapping("/homework/edit/{homeworkId}")
+    public String editHomework(@PathVariable("homeworkId") Integer homeworkId, Model model) {
+        model.addAttribute("homework", homeworkService.findById(homeworkId));
+        model.addAttribute("disciplineList", disciplineService.disciplineList());
+        model.addAttribute("homeworkList", homeworkService.getHomeworkListByDate());
+        return "homework";
+    }
+
+    //rating
+    @RequestMapping(value = "/rating", method = RequestMethod.GET)
+    public String addRating(Model model) {
+        model.addAttribute("rating", new Rating());
+        model.addAttribute("disciplineList", disciplineService.disciplineList());
+        model.addAttribute("userList", userService.getUserListByLastName());
+        model.addAttribute("ratingList", ratingService.getRatingListByDate());
+        return "rating";
+    }
+
+    @RequestMapping(value = "/rating/save**", method = RequestMethod.POST)
+    public ModelAndView saveRating(@ModelAttribute("rating")Rating rating,
+                                     BindingResult result) {
+        if (null == rating.getRatingId()) {
+            ratingService.saveRating(rating);
+        } else {
+            ratingService.updateRating(rating);
+        }
+        return new ModelAndView("redirect:/admin/rating");
+    }
+
+    @RequestMapping(value = "/rating/delete/{ratingId}")
+    public String deleteRating(@PathVariable("ratingId") Integer ratingId){
+
+        ratingService.delete(ratingId);
+        return "redirect:/admin/rating";
+    }
+
+    @RequestMapping("/rating/edit/{ratingId}")
+    public String editRating(@PathVariable("ratingId") Integer ratingId, Model model) {
+        model.addAttribute("rating", ratingService.findById(ratingId));
+        model.addAttribute("disciplineList", disciplineService.disciplineList());
+        model.addAttribute("userList", userService.getUserListByLastName());
+        model.addAttribute("ratingList", ratingService.getRatingListByDate());
+        return "rating";
+    }
 }

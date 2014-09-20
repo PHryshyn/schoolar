@@ -25,14 +25,6 @@
         <put-attribute name="current" value="disciplines"/>
     </definition>
 
-
-
-    <definition name="listOfUser" extends="common">
-        <put-attribute name="title" value="Schoolar" />
-        <put-attribute name="body" value="/WEB-INF/views/listOfUser.jsp" />
-
-    </definition>
-
     <definition name="user-new" extends="common">
         <put-attribute name="title" value="User registration" />
         <put-attribute name="body" value="/WEB-INF/views/user-new.jsp" />
@@ -52,11 +44,16 @@
     </definition>
 
     <definition name="homework" extends="common">
-        <put-attribute name="title" value="Edit User Profile" />
+        <put-attribute name="title" value="Homework" />
         <put-attribute name="body" value="/WEB-INF/views/homework.jsp" />
         <put-attribute name="current" value="homework"/>
     </definition>
 
+    <definition name="rating" extends="common">
+        <put-attribute name="title" value="Rating" />
+        <put-attribute name="body" value="/WEB-INF/views/rating.jsp" />
+        <put-attribute name="current" value="rating"/>
+    </definition>
 
 
 </tiles-definitions>

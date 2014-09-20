@@ -51,6 +51,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="${current == 'admin' ? 'active' : ''}"><a href='<spring:url value="/admin/disciplines"/>'>Discipline</a></li>
                     <li class="${current == 'user-new' ? 'active' : ''}"><a href='<spring:url value="/admin/users"/>'>Create User</a></li>
+                    <li class="${current == 'homework' ? 'active' : ''}"><a href='<spring:url value="/admin/homeworks"/>'>Homework</a></li>
+                    <li class="${current == 'rating' ? 'active' : ''}"><a href='<spring:url value="/admin/rating"/>'>Rating</a></li>
 
                     <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
                 </ul>

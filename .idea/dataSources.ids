@@ -726,37 +726,48 @@
       <column name="discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="discipline" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="discipline_id"/>
-      <exported-key name="fk_homework_discipline1" table="homework" schema="" catalog="marius" columns="discipline_discipline_id"/>
-      <exported-key name="fk_rating_discipline1" table="rating" schema="" catalog="marius" columns="discipline_discipline_id"/>
-      <exported-key name="fk_shedule_discipline" table="shedule" schema="" catalog="marius" columns="discipline_discipline_id"/>
+      <exported-key name="fk_homework_discipline1" table="homework" schema="" catalog="marius" columns="discipline_id"/>
+      <exported-key name="fk_rating_discipline1" table="rating" schema="" catalog="marius" columns="discipline_id"/>
+      <exported-key name="fk_shedule_discipline" table="shedule" schema="" catalog="marius" columns="discipline_id"/>
+      <exported-key name="FK63E0E255F1920506" table="shedule_discipline" schema="" catalog="marius" columns="disciplines_discipline_id"/>
     </table>
     <table name="homework" schema="" catalog="marius" type="TABLE">
       <column name="homework_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="homework" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <column name="homework_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
-      <column name="discipline_discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="homework_id"/>
-      <foreign-key name="fk_homework_discipline1" columns="discipline_discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="fk_homework_discipline1_idx" unique="false" columns="discipline_discipline_id"/>
+      <foreign-key name="fk_homework_discipline1" columns="discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_homework_discipline1_idx" unique="false" columns="discipline_id"/>
     </table>
     <table name="rating" schema="" catalog="marius" type="TABLE">
       <column name="rating_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="rating_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
       <column name="rating" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="discipline_discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="rating_id"/>
-      <foreign-key name="fk_rating_discipline1" columns="discipline_discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_rating_user1" columns="user_id" ref-table="user" ref-schema="" ref-catalog="marius" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="fk_rating_discipline1_idx" unique="false" columns="discipline_discipline_id"/>
-      <index name="fk_rating_user1_idx" unique="false" columns="user_id"/>
+      <foreign-key name="fk_rating_discipline1" columns="discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rating_user1" columns="id" ref-table="user" ref-schema="" ref-catalog="marius" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_rating_discipline1_idx" unique="false" columns="discipline_id"/>
+      <index name="fk_rating_user1_idx" unique="false" columns="id"/>
     </table>
     <table name="shedule" schema="" catalog="marius" type="TABLE">
       <column name="shedule_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="discipline_discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="shedule_id"/>
-      <foreign-key name="fk_shedule_discipline" columns="discipline_discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="fk_shedule_discipline_idx" unique="false" columns="discipline_discipline_id"/>
+      <foreign-key name="fk_shedule_discipline" columns="discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK63E0E2555E41B5D7" table="shedule_discipline" schema="" catalog="marius" columns="shedule_shedule_id"/>
+      <index name="fk_shedule_discipline_idx" unique="false" columns="discipline_id"/>
+    </table>
+    <table name="shedule_discipline" schema="" catalog="marius" type="TABLE">
+      <column name="shedule_shedule_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="disciplines_discipline_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="shedule_shedule_id,disciplines_discipline_id"/>
+      <foreign-key name="FK63E0E2555E41B5D7" columns="shedule_shedule_id" ref-table="shedule" ref-schema="" ref-catalog="marius" ref-columns="shedule_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK63E0E255F1920506" columns="disciplines_discipline_id" ref-table="discipline" ref-schema="" ref-catalog="marius" ref-columns="discipline_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK63E0E2555E41B5D7" unique="false" columns="shedule_shedule_id"/>
+      <index name="FK63E0E255F1920506" unique="false" columns="disciplines_discipline_id"/>
     </table>
     <table name="user" schema="" catalog="marius" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -771,7 +782,7 @@
       <column name="full_name_p2" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <column name="phone" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="fk_rating_user1" table="rating" schema="" catalog="marius" columns="user_id"/>
+      <exported-key name="fk_rating_user1" table="rating" schema="" catalog="marius" columns="id"/>
     </table>
     <table name="columns_priv" schema="" catalog="mysql" type="SYSTEM TABLE">
       <column name="Host" sqlType="CHAR" precision="60" scale="0" nullable="false" jdbcType="1" def="Jyc="/>

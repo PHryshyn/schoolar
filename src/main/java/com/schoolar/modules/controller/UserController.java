@@ -1,7 +1,6 @@
 package com.schoolar.modules.controller;
 
 
-import com.schoolar.modules.model.Homework;
 import com.schoolar.modules.model.User;
 import com.schoolar.modules.service.DisciplineService;
 import com.schoolar.modules.service.HomeworkService;
@@ -59,7 +58,7 @@ public class UserController {
 
     //homework
     //homework
-    @RequestMapping(value = "/homeworks", method = RequestMethod.GET)
+   /* @RequestMapping(value = "/homeworks", method = RequestMethod.GET)
     public String Homework(Model model) {
         model.addAttribute("homework", new Homework());
        // model.addAttribute("disciplineList", disciplineService.disciplineList());

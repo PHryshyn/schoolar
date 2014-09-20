@@ -13,7 +13,7 @@
 
     <context:component-scan base-package="com.schoolar.modules" />
 
- <!--
+<!--
 <bean
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
@@ -39,7 +39,6 @@
             </list>
         </property>
     </bean>
-
 
     <bean id="userDao" class="com.schoolar.modules.dao.Impl.UserDaoImpl"/>
     <bean id="userService" class="com.schoolar.modules.service.Impl.UserServiceImpl"/>
