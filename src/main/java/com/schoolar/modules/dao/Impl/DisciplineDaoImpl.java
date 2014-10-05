@@ -19,6 +19,7 @@ public class DisciplineDaoImpl extends BasicCrudDaoImpl<Discipline, Integer> imp
 
     @Override
     public void updateDiscipline(Discipline discipline) {
+        logger.info("Starting update discipline");
         Discipline disciplineToUpdate = findById(discipline.getDisciplineId());
         disciplineToUpdate.setDiscipline(discipline.getDiscipline());
         update(disciplineToUpdate);
@@ -29,7 +30,9 @@ public class DisciplineDaoImpl extends BasicCrudDaoImpl<Discipline, Integer> imp
     @Override
     @SuppressWarnings("unchecked")
     public List<Discipline> disciplineList() {
+
       //  return  getCurrentSession().createCriteria(Discipline.class).list();
       return (List<Discipline>)  getCurrentSession().createCriteria(Discipline.class).list();
+
     }
 }

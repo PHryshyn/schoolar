@@ -3,6 +3,8 @@ package com.schoolar.modules.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 @Entity
@@ -14,25 +16,20 @@ public class Homework {
     @Column(name = "homework_id")
     private Integer homeworkId;
 
+    @NotNull
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "homework_date")
     private Date homeworkDate;
 
     @Column(name = "homework")
+    @Pattern(regexp = "[a-zA-Z0-9,#-.,]*")
     private String homework;
-/*
-    @Column(name = "notes")
-    private String notes;
-*/
-    @OneToOne//(fetch = FetchType.LAZY)
+
+    @OneToOne
     @JoinColumn(name = "discipline_id")
     private Discipline discipline;
-/*
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
-    private User user;
-*/
+
     public Homework() {
     }
 
@@ -41,16 +38,6 @@ public class Homework {
         this.homework = homework;
         this.discipline = discipline;
     }
-
-    /*
-    public Notes(Date noteDate, String homework, String notes, Discipline discipline, User user) {
-        this.noteDate = noteDate;
-        this.homework = homework;
-        this.notes = notes;
-        this.discipline = discipline;
-        this.user = user;
-    }
-*/
 
     public Integer getHomeworkId() {
         return homeworkId;

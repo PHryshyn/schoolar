@@ -20,6 +20,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label">Date (mm.dd.yyyy):</label>
         <div class="col-sm-8">
+            <form:errors path="homeworkDate" cssClass="error" />
             <form:input path="homeworkDate" class="form-control" placeholder="homeworkDate"/>
         </div>
     </div>
@@ -27,6 +28,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label">Homework:</label>
         <div class="col-sm-8">
+            <form:errors path="homework" cssClass="error" />
             <form:input path="homework" class="form-control" placeholder="homework"/>
         </div>
     </div>
@@ -35,7 +37,6 @@
         <label class="col-sm-3 control-label">Choose discipline:</label>
         <div class="col-sm-8">
             <form:select class="form-control" path="discipline.disciplineId">
-                <form:option value="0" label="Select" />
                 <form:options items="${disciplineList}" itemValue="disciplineId" itemLabel="discipline" />
             </form:select>
         </div>
@@ -63,16 +64,15 @@
     <table class="table table-bordered">
         <h2>List of Homeworks</h2>
         <tr>
-            <th>ID</th>
             <th>Date</th>
             <th>Discipline</th>
             <th>Homework</th>
-            <th>Action</th>
+            <th>Delete</th>
+            <th>Edit</th>
         </tr>
 
         <c:forEach items="${homeworkList}" var="homework">
             <tr>
-                <td>${homework.homeworkId}</td>
                 <td><c:out value="${homework.homeworkDate}"/></td>
                 <td><c:out value="${homework.discipline.discipline}"/></td>
                 <td><c:out value="${homework.homework}"/></td>

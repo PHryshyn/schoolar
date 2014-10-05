@@ -13,7 +13,7 @@
             <div class="form-group" >
                 <label class="col-sm-2 control-label">Discipline:</label>
                 <div class="col-sm-10">
-                    <form:input path="id" class="form-control" />
+                    <form:input path="id" class="form-control" disabled="true" />
                     <form:hidden path="id" />
                 </div>
             </div>
@@ -22,6 +22,7 @@
         <div class="form-group" >
             <label class="col-sm-2 control-label">Username:</label>
             <div class="col-sm-10">
+                <form:errors path="username"  class="error" />
                 <form:input path="username" id="username" class="form-control" placeholder="Username"/>
             </div>
         </div>
@@ -29,6 +30,7 @@
         <div class="form-group">
             <label for="password" class="col-sm-2 control-label">Password:</label>
             <div class="col-sm-10">
+                <form:errors path="password" cssClass="error" />
                 <form:password path="password" id="password" class="form-control" placeholder="password"/>
             </div>
         </div>
@@ -36,6 +38,7 @@
         <div class="form-group" >
             <label class="col-sm-2 control-label">First Name:</label>
             <div class="col-sm-10">
+                <form:errors path="firstName" cssClass="error" />
                 <form:input path="firstName" id="firstName" class="form-control" placeholder="First Name"/>
             </div>
         </div>
@@ -43,6 +46,7 @@
         <div class="form-group" >
             <label class="col-sm-2 control-label">Last Name:</label>
             <div class="col-sm-10">
+                <form:errors path="lastName" cssClass="error" />
                 <form:input path="lastName" id="lastName" class="form-control" placeholder="Last Name"/>
             </div>
         </div>
@@ -67,17 +71,16 @@
             <table class="table table-bordered">
                 <h2>List of Users</h2>
                 <tr>
-                    <th>ID</th>
                     <th>Last Name</th>
                     <th>First Name</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Action</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
 
                 <c:forEach items="${userListByLastName}" var="user">
                     <tr>
-                        <td><c:out value="${user.id}"/></td>
                         <td><c:out value="${user.lastName}"/></td>
                         <td><c:out value="${user.firstName}"/></td>
                         <td><c:out value="${user.username}"/></td>

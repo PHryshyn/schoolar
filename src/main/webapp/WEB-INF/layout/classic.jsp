@@ -9,7 +9,7 @@
 <html>
 <head>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+    <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -24,10 +24,6 @@
 </head>
 <body>
 
-<%@taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx"%>
-
-
-<tilesx:useAttribute name="current" />
 
 <div class="container">
     <!-- Static navbar -->
@@ -44,17 +40,24 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="${current == 'user-profile' ? 'active' : ''}"><a href='<spring:url value="/user/profile"/>'>Profile</a></li>
-                    <li class="${current == 'homework' ? 'active' : ''}"><a href='<spring:url value="/user/homeworks "/>'>Homework</a></li>
-
+            <security:authorize access="hasAnyRole('ROLE_USER, ROLE_ADMIN')">
+                    <li><a href='<spring:url value="/user/profile"/>'>Profile</a></li>
+            </security:authorize>
+            <security:authorize access="hasRole('ROLE_USER')">
+                    <li><a href='<spring:url value="/user/rating"/>'>Rating</a></li>
+            </security:authorize>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="${current == 'admin' ? 'active' : ''}"><a href='<spring:url value="/admin/disciplines"/>'>Discipline</a></li>
-                    <li class="${current == 'user-new' ? 'active' : ''}"><a href='<spring:url value="/admin/users"/>'>Create User</a></li>
-                    <li class="${current == 'homework' ? 'active' : ''}"><a href='<spring:url value="/admin/homeworks"/>'>Homework</a></li>
-                    <li class="${current == 'rating' ? 'active' : ''}"><a href='<spring:url value="/admin/rating"/>'>Rating</a></li>
 
+                <ul class="nav navbar-nav navbar-right">
+            <security:authorize access="hasRole('ROLE_ADMIN')">
+                    <li><a href='<spring:url value="/admin/disciplines"/>'>Discipline</a></li>
+                    <li><a href='<spring:url value="/admin/users"/>'>Create User  </a></li>
+                    <li><a href='<spring:url value="/admin/homeworks"/>'>Homework</a></li>
+                    <li><a href='<spring:url value="/admin/rating"/>'>Rating</a></li>
+            </security:authorize>
+<security:authorize access="hasAnyRole('ROLE_USER, ROLE_ADMIN')">
                     <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
+    </security:authorize>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

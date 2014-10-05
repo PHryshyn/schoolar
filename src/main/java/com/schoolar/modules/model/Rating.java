@@ -1,8 +1,10 @@
 package com.schoolar.modules.model;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -14,17 +16,22 @@ public class Rating {
     @Column(name = "rating_id")
     private Integer ratingId;
 
+    @NotNull
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "rating_date")
     private Date ratingDate;
 
+    @NotNull
+    @Range(min = 1, max = 10)
     @Column(name = "rating")
     private Integer rating;
+
 
     @OneToOne
     @JoinColumn(name = "discipline_id")
     private Discipline discipline;
+
 
     @OneToOne
     @JoinColumn(name = "id")
@@ -39,6 +46,8 @@ public class Rating {
         this.discipline = discipline;
         this.user = user;
     }
+
+
 
     public Integer getRatingId() {
         return ratingId;

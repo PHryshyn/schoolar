@@ -7,6 +7,7 @@ import com.schoolar.modules.model.User;
 import com.schoolar.modules.service.DisciplineService;
 import com.schoolar.modules.service.UserService;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -49,6 +50,17 @@ public class RatingDaoImpl extends BasicCrudDaoImpl<Rating, Integer> implements 
     public List<Rating> getRatingListByDate() {
 
         return (List<Rating>) getCurrentSession().createCriteria(Rating.class).addOrder(Order.desc("ratingDate")).setMaxResults(50).list();
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Rating> getRatingListByUser() {
+        Rating rating = new Rating();
+        List ratingList = (List<Rating>) getCurrentSession().createCriteria(User.class)
+                .add( Restrictions.eq("username",rating.getUser().getUsername()))
+                .addOrder(Order.desc("ratingDate"))
+                .list();
+        return ratingList;
     }
 
 }

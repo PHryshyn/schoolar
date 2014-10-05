@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("notesService")
+@Service("homeworkService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class HomeworkServiceImpl implements HomeworkService {
 

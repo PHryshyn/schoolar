@@ -12,6 +12,7 @@ public interface RatingService{
     public List<Rating> getRatingListByDate();
     Rating findById(Integer ratingId);
     void delete(Integer ratingId);
+    public List<Rating> getRatingListByUser();
 
 
 }

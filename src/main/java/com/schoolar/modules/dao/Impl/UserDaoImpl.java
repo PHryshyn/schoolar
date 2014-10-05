@@ -46,7 +46,7 @@ public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements User
     @SuppressWarnings("unchecked")
     public List<User> getUserListByLastName() {
         List userList = (List<User>) getCurrentSession().createCriteria(User.class)
-                .add( Restrictions.like("role", Role.ROLE_USER) )
+                .add( Restrictions.eq("role", Role.ROLE_USER) )
                 .addOrder(Order.asc("lastName"))
                 .list();
         return userList;
@@ -59,4 +59,5 @@ public class UserDaoImpl extends BasicCrudDaoImpl<User, Integer> implements User
 
         return (User) query.uniqueResult();
     }
+
 }

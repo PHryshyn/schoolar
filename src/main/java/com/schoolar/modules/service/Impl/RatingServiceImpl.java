@@ -52,4 +52,10 @@ public class RatingServiceImpl implements RatingService {
     public void delete(Integer ratingId) {
         ratingDao.delete(ratingId);
     }
+
+    @Transactional
+    @Override
+    public List<Rating> getRatingListByUser() {
+        return ratingDao.getRatingListByUser();
+    }
 }

@@ -3,12 +3,7 @@
 
 
 <form:form class="form-horizontal" modelAttribute="user" method="get" action="${pageContext.request.contextPath}/user/profile/edit/${user.id}">
-    <div class="form-group" >
-        <label class="col-sm-2 control-label">ID:</label>
-        <div class="col-sm-15">
-            <p class="form-control-static">${user.id}</p>
-        </div>
-    </div>
+
     <div class="form-group" >
         <label class="col-sm-2 control-label">Username:</label>
         <div class="col-sm-15">

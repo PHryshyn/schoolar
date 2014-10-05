@@ -1,7 +1,9 @@
 package com.schoolar.modules.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
-import java.util.Set;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "discipline")
@@ -12,8 +14,9 @@ public class Discipline {
     @Column(name = "discipline_id")
     private Integer disciplineId;
 
-
+    @NotEmpty
     @Column(name = "discipline")
+    @Pattern(regexp = "[a-zA-Z]*")
     private String discipline;
 
     public Discipline(String discipline) {
@@ -22,6 +25,12 @@ public class Discipline {
 
     public Discipline() {
     }
+
+    public Discipline(Integer DisciplineId, String discipline) {
+        this.disciplineId = disciplineId;
+        this.discipline = discipline;
+    }
+
 
     public Integer getDisciplineId() {
         return disciplineId;

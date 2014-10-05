@@ -16,22 +16,20 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-
-
-
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/dispatcher-servlet.xml,
-            /WEB-INF/dispatcher-datasource.xml,
+            classpath*:/Context/dispatcher-datasource.xml,
             /WEB-INF/dispatcher-security.xml
-
         </param-value>
     </context-param>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+
 
    <!-- <filter> -->
         <!-- This filter has to come before other filters. -->

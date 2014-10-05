@@ -12,4 +12,6 @@ public interface UserDao extends BasicCrudDao<User, Integer> {
     User findByUsername(String username);
     //User getProfile(String username);
 
+
+
 }
